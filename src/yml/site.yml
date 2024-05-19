@@ -1,7 +1,6 @@
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Vijai Kumar S
+title: Vijai Kumar | Portfolio
+description: Explore my portfolio and discover projects showcasing my skills in data analysis, machine learning, and data visualization. I've worked on diverse projects. This portfolio showcases my experience in transforming raw data into meaningful insights using tools like Python, SAS, and Power BI. I'm passionate about solving real-world problems and finding innovative solutions through data-driven approaches.
 tags:
   - blog
   - template
@@ -18,7 +17,7 @@ menu:
     url: /contact
   - title: Feed
     url: /feed.xml
-email: youremail@test.com
+email: vijaisvk22@gmail.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
