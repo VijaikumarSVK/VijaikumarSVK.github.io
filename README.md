@@ -2,7 +2,7 @@
 
 ![Jekflix Template Cover Image](https://res.cloudinary.com/dm7h7e8xj/image/upload/v1505354182/jekflix-logo_mfngps.png)
 
-See the [demo here](https://jekflix.rossener.com/).
+See the [demo here](https://vijaikumarsvk.github.io/).
 
 ## What is it?
 
