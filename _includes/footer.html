@@ -35,7 +35,7 @@
     {% include links.html %}
 
     <p>
-      <span>This portflio</span> was made with <svg class="love"><use xlink:href="#icon-brain"></use></svg> by <a href="https://github.com/VijaikumarSVK" target="_blank" class="creator">Vijai Kumar</a>
+      <span>This portflio</span> was made with <svg class="love"><use xlink:href="#icon-love"></use></svg> by <a href="https://github.com/VijaikumarSVK" target="_blank" class="creator">Vijai Kumar</a>
     </p>
 </footer>
 
@@ -59,7 +59,7 @@
     {% assign social_urls = social_urls | append: '"https://www.linkedin.com/in/' | append: site.linkedin_username | append: '",' %}
 {% endif %}
 
-<!-- <script type="application/ld+json">
+<script type="application/ld+json">
 {
   "@context": "http://schema.org",
   "@type": "Organization",
@@ -76,16 +76,13 @@
     {{ social_urls | split: "," | join: "," }}
   ]
 }
-</script> -->
+</script>
 
 <!-- Include the script that allows Netlify CMS login -->
 <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 
 <!-- Include the website scripts -->
-<script src="{{ '/assets/js/scripts.min.js' | prepend: site.baseurl }}"></script>
+<!-- <script src="{{ '/assets/js/scripts.min.js' | prepend: site.baseurl }}"></script> -->
 
 <!-- Include Google Analytics script -->
 {% include stats.html %}
-
-<!-- Include extra scripts -->
-{% include extra-js.html %}
