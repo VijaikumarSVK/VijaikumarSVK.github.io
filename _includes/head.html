@@ -39,27 +39,6 @@
         <meta name="keywords" content="{{ page.tags | join: ', ' }}">
     {% endif %}
 
-    <!-- Social: Twitter -->
-    <!-- <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="{{ title }}">
-    <meta name="twitter:description" content="{{ description }}">
-
-    {% if image contains '://' %}
-        <meta property="twitter:image" content="{{ image }}">
-    {% else %}
-        <meta property="twitter:image" content="{{ image | prepend: site.url }}">
-    {% endif %}
-
-    {% if site.twitter_username %}
-        <meta name="twitter:site" content="@{{ site.twitter_username }}">
-    {% endif %} -->
-
-    <!-- Social: Facebook / Open Graph -->
-    <!-- <meta property="og:url" content="{{ url }}">
-    <meta property="og:title" content="{{ title }}">
-    <meta property="og:image" content="{{ image }}">
-    <meta property="og:description" content="{{ description }}">
-    <meta property="og:site_name" content="{{ site.title }}"> -->
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{ site.baseurl }}/favicon.ico" type="image/x-icon" />
@@ -76,7 +55,7 @@
     <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/icons/apple-touch-icon-152x152.png" />
 
     <!-- Windows 8 Tile Icons -->
-    <meta name="application-name" content="{{ site.name }}">
+    <meta name="application-name" content="Vijai Portfolio">
     <meta name="msapplication-TileColor" content="#141414">
     <meta name="msapplication-square70x70logo" content="smalltile.png" />
     <meta name="msapplication-square150x150logo" content="mediumtile.png" />
@@ -91,7 +70,7 @@
 
     <link rel="stylesheet" href="{{ '/assets/css/styles.css' | prepend: site.baseurl }}">
     <link rel="canonical" href="{{ url }}">
-    <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" />
+    <link rel="alternate" type="application/rss+xml" title="Vijai Portfolio" href="{{ '/feed.xml' | prepend: site.baseurl | prepend: site.url }}" />
 
     <!-- Include extra styles -->
     {% include extra-css.html %}
