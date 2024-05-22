@@ -16,11 +16,11 @@ menu:
     url: /contact
   # - title: Feed
   #   url: /feed.xml
-email: vijaisvk22@gmail.com
+email:
 # See: https://disqus.com/
-disqus_username: disqus_username
+disqus_username:
 # Contact Form Setting
 # See: https://formspree.io/
-formspree_form_id: https://formspree.io/f/xgegbalj
+formspree_form_id:
 # github_username: VijaikumarSVK
 # linkedin_username: vijai-kumar-s
