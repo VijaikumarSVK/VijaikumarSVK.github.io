@@ -493,7 +493,7 @@ collections:
           - label: "URL"
             name: "url"
             widget: "string"
-            hint: "The base hostname and protocol for your site, e.g. https://rossener.com"
+            hint: "The base hostname and protocol for your site, e.g. https://vijaikumarsvk.github.io/"
           - label: "Google Analytics ID"
             name: "google_analytics"
             widget: "string"
@@ -511,5 +511,3 @@ collections:
             name: "sent_message_url"
             hint: "URL where the user will be redirected for after submit the contact form. Ex: /contact/message-sent/"
             required: false
-
-
