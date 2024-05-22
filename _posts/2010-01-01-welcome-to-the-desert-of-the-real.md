@@ -7,7 +7,7 @@ description: >-
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.
 image: >-
-  https://github.com/VijaikumarSVK/VijaikumarSVK.github.io/blob/main/src/img/blog-image.png
+  https://res.cloudinary.com/dqqjik4em/image/upload/v1716403744/Data%20analytics1.jpg
 optimized_image: >-
   https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559821647/theme6_qeeojf.jpg
 category: blog
