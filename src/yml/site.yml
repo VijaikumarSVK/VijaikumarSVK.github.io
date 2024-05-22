@@ -4,7 +4,6 @@ description: Explore my portfolio and discover projects showcasing my skills in 
 tags:
   - blog
   - template
-  - jekyll
   - theme
   - netlify
 show_hero: true
@@ -22,6 +21,6 @@ email: vijaisvk22@gmail.com
 disqus_username: disqus_username
 # Contact Form Setting
 # See: https://formspree.io/
-formspree_form_id: formspree_form_id
+formspree_form_id: https://formspree.io/f/xgegbalj
 # github_username: VijaikumarSVK
 # linkedin_username: vijai-kumar-s
