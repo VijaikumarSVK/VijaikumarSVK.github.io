@@ -1,14 +1,12 @@
 # Site Settings
-name: Jekflix
-title: Jekflix | A blog theme for Jekyll
-description: Jekflix is a template for Jekyll inspired by Netflix and made by
-  Thiago Rossener.
+name: Vijai Kumar
+title: Vijai Kumar | Portfolio
+description: Explore my portfolio and discover projects showcasing my skills in data analysis, machine learning, and data visualization. I've worked on diverse projects. This portfolio showcases my experience in transforming raw data into meaningful insights using tools like Python, SAS, and Power BI. I'm passionate about solving real-world problems and finding innovative solutions through data-driven approaches.
 tags:
   - blog
   - template
   - jekyll
   - theme
-  - netlify
 show_hero: true
 menu:
   - title: Home
@@ -17,15 +15,12 @@ menu:
     url: /about
   - title: Contact
     url: /contact
-  - title: Feed
-    url: /feed.xml
-email: youremail@test.com
+email: vijaisvk22@gmail.com
 # See: https://disqus.com/
 disqus_username: disqus_username
 # Contact Form Setting
 # See: https://formspree.io/
-formspree_form_id: formspree_form_id
-
+formspree_form_id: "xgegbalj"
 
 # Social Media Settings
 # Remove the item if you don't need it
@@ -108,6 +103,3 @@ exclude: [
   'gulpfile.js',
   'README.md'
 ]
-
-# Theme
-version: v3.1.2
