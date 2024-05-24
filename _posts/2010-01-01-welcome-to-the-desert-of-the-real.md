@@ -2,14 +2,14 @@
 date: 2019-05-16 23:48:05
 layout: post
 title: Welcome to my Portfolio
-subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
+subtitle: 'Showcasing My Data Analysis & Machine Learning Journey'
 description: >-
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.
 image: >-
-  https://res.cloudinary.com/dqqjik4em/image/upload/v1716519671/Data%20analytics2.jpg
+  https://res.cloudinary.com/dqqjik4em/image/upload/v1716519671/Data%20analytics1.jpg
 optimized_image: >-
-  https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Data%20analytics1
+  https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Data%20analytics2
 category: blog
 tags:
   - welcome
