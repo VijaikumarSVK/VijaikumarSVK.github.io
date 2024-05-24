@@ -1,7 +1,7 @@
 ---
 date: 2019-05-16 23:48:05
 layout: post
-title: Welcome to the vijai's portfolio
+title: Welcome to my Portfolio
 subtitle: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.'
 description: >-
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -9,12 +9,12 @@ description: >-
 image: >-
   https://res.cloudinary.com/dqqjik4em/image/upload/v1716519671/Data%20analytics2.jpg
 optimized_image: >-
-  https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Data%20analytics2
+  https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Data%20analytics1
 category: blog
 tags:
   - welcome
   - blog
-author: mranderson
+author: Vijai Kumar
 paginate: true
 ---
 Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
