@@ -9,7 +9,7 @@ description: >-
 image: >-
   https://res.cloudinary.com/dqqjik4em/image/upload/v1716519671/Data%20analytics1.jpg
 optimized_image: >-
-  https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Data%20analytics2
+  https://res.cloudinary.com/dqqjik4em/image/upload/v1716620859/Data%20analytics2_flip.jpg
 category: blog
 tags:
   - welcome
