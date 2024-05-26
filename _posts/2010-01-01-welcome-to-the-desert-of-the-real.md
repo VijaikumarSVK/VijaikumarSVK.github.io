@@ -7,7 +7,7 @@ description: >-
   Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
   tempor incididunt ut labore et dolore magna aliqua.
 image: >-
-  <img class="img-rounded" src="https://res.cloudinary.com/dqqjik4em/image/upload/v1716519671/Data%20analytics1.jpg" alt="Vijai Kumar" width="200">
+  <img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Vijai Kumar" width="200">
 optimized_image: >-
   https://res.cloudinary.com/dqqjik4em/image/upload/v1716620859/Data%20analytics2_flip.jpg
 category: blog
