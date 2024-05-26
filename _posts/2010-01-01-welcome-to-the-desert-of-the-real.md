@@ -17,7 +17,8 @@ tags:
 author: Vijai Kumar
 paginate: true
 ---
-Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+## DATA ANALYST
+I'm currently a full time data analyst. I have skills in Python, SAS 9.4, SQL, Snowflake, Power BI, Machine Learning, MS Excel, PowerPoint and Big Data Analytics. You can view my personal <a href="https://vijaikumarsvk.github.io/">portfolio</a> here or download my resume below.
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
@@ -38,7 +39,7 @@ Most of these elements are styled by browsers with few modifications on our part
 
 # Heading 1
 
-## Heading 2
+  ## Heading 2
 
 ### Heading 3
 

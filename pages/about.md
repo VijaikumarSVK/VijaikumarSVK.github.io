@@ -7,7 +7,7 @@ description: About myself.
 permalink: /about/
 ---
 
-<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Vijai Kumar" width="200">
+<img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Vijai Kumar" width="400">
 
 # About
 
