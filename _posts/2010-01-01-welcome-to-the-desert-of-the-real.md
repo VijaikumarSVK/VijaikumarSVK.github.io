@@ -17,7 +17,7 @@ tags:
 author: Vijai Kumar
 paginate: true
 ---
-#Vijai Kumar
+# Vijai Kumar
 ## DATA ANALYST
 I'm currently a full time data analyst. I have skills in Python, SAS 9.4, SQL, Snowflake, Power BI, Machine Learning, MS Excel, PowerPoint and Big Data Analytics. You can view my personal <a href="https://vijaikumarsvk.github.io/">portfolio</a> here or download my resume below.
 
