@@ -35,8 +35,7 @@
   padding-bottom: rem(40px);
 
   @include media(">=sm") {
-    max-width: rem(1800px);
-    flex-direction: row;
+    max-width: rem(1100px);
     margin: 0 auto;
     padding: rem(40px) 0;
   }
