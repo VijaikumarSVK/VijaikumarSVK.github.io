@@ -7,34 +7,44 @@
   }
 }
 
-.vj_resume_download_button {
-  background: linear-gradient(to bottom right, #EF4765, #FF9A5A);
-  border: 0;
-  border-radius: 12px;
-  color: #FFFFFF;
+.vj_resume_download_button{
+  background: #e62143;
+  border-radius: 11px;
+  box-sizing: border-box;
+  color: #fff;
   cursor: pointer;
-  display: inline-block;
-  font-family: -apple-system,system-ui,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-  font-size: 16px;
-  font-weight: 500;
-  line-height: 2.5;
-  outline: transparent;
-  padding: 0 1rem;
+  display: flex;
+  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
+  font-size: 1.15em;
+  font-weight: 700;
+  justify-content: center;
+  line-height: 33.4929px;
+  padding: .8em 1em;
   text-align: center;
   text-decoration: none;
-  transition: box-shadow .2s ease-in-out;
+  text-decoration-skip-ink: auto;
+  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
+  text-underline-offset: 1px;
+  transition: all .2s ease-in-out;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  white-space: nowrap;
+  width: 100%;
+  word-break: break-word;
+  border: 0;
 }
 
-.vj_resume_download_button:not([disabled]):focus {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+.vj_resume_download_button:active,
+.vj_resume_download_button:focus {
+  border-bottom-style: none;
+  border-color: #dadada;
+  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
+  outline: 0;
 }
 
-.vj_resume_download_button:not([disabled]):hover {
-  box-shadow: 0 0 .25rem rgba(0, 0, 0, 0.5), -.125rem -.125rem 1rem rgba(239, 71, 101, 0.5), .125rem .125rem 1rem rgba(255, 154, 90, 0.5);
+.vj_resume_download_button:hover {
+  border-bottom-style: solid;
+  border-color: #dadada;
 }
 
 .post.two-columns {
