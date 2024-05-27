@@ -126,6 +126,11 @@
     line-height: 1.2;
     margin: rem(5px) auto rem(10px);
     padding-top: 0;
+  }
+  h1.post-title_vj {
+    line-height: 1.2;
+    margin: rem(5px) auto rem(10px);
+    padding-top: 0;
     text-align: center;
   }
 
@@ -134,6 +139,18 @@
     font-size: rem(17px);
     margin: rem(10px) auto;
     line-height: 1.6;
+
+    @include media(">=sm") {
+      font-size: rem(20px);
+    }
+  }
+
+  p.post-subtitle_vj {
+    color: darken($lightGray, 30%);
+    font-size: rem(17px);
+    margin: rem(10px) auto;
+    line-height: 1.6;
+    text-align: center;
 
     @include media(">=sm") {
       font-size: rem(20px);
