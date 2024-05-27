@@ -11,6 +11,7 @@ tags:
   - crazy
   - story
 author: mranderson
+vj_layout: false
 vj_side_layout: true
 ---
 

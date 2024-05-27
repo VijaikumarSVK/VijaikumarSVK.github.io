@@ -12,6 +12,7 @@ tags:
   - read
 author: mranderson
 paginate: true
+vj_layout: false
 vj_side_layout: true
 ---
 

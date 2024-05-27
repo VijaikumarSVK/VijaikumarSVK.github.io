@@ -11,6 +11,7 @@ tags:
   - languages
   - tips
 author: mranderson
+vj_layout: false
 vj_side_layout: true
 ---
 
