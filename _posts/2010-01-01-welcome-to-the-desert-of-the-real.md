@@ -19,7 +19,7 @@ paginate: true
 vj_layout: true
 vj_side_layout: false
 ---
-<p style="font-size: 80px;"><b>VIJAI KUMAR S</b></p>
+<p style="font-size: 60px;"><b>VIJAI KUMAR S</b></p>
 <p style="font-size: 40px;">DATA ANALYST</p>
 I'm a Data Analyst with a passion for turning data into actionable insights. I'm skilled in Python, SAS 9.4, SQL, Snowflake, Power BI, Machine Learning, MS Excel, PowerPoint, and Big Data Analytics. My portfolio showcases projects where I've delivered actionable recommendations, solved complex problems, and improved business performance. Explore my <a href="https://vijaikumarsvk.github.io/">portfolio</a>  or download my resume below.
 
