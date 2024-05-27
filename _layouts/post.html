@@ -6,7 +6,7 @@
         {% include svg-icons.html %}
         {% include header.html %}
 
-        <section class="post {% if site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
+        <section class="post {% if page.vj_layout %}one-column{% elsif site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
             <article role="article" class="post-content">
                 <p class="post-info">
                     {% if page.date %}
