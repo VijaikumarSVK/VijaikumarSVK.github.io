@@ -6,45 +6,32 @@
     top: rem(50px);
   }
 }
-
-.vj_resume_download_button{
-  background: #e62143;
-  border-radius: 11px;
+.vj_resume_download_button {
+  background-image: linear-gradient(-180deg, #37AEE2 0%, #1E96C8 100%);
+  border-radius: .5rem;
   box-sizing: border-box;
-  color: #fff;
-  cursor: pointer;
+  color: #FFFFFF;
   display: flex;
-  font-family: Mija,-apple-system,BlinkMacSystemFont,Roboto,"Roboto Slab","Droid Serif","Segoe UI",system-ui,Arial,sans-serif;
-  font-size: 1.15em;
-  font-weight: 700;
+  font-size: 16px;
   justify-content: center;
-  line-height: 33.4929px;
-  padding: .8em 1em;
-  text-align: center;
+  padding: 1rem 1.75rem;
   text-decoration: none;
-  text-decoration-skip-ink: auto;
-  text-shadow: rgba(0, 0, 0, .3) 1px 1px 1px;
-  text-underline-offset: 1px;
-  transition: all .2s ease-in-out;
+  width: 100%;
+  border: 0;
+  cursor: pointer;
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
-  width: 100%;
-  word-break: break-word;
-  border: 0;
-}
-
-.vj_resume_download_button:active,
-.vj_resume_download_button:focus {
-  border-bottom-style: none;
-  border-color: #dadada;
-  box-shadow: rgba(0, 0, 0, .3) 0 3px 3px inset;
-  outline: 0;
 }
 
 .vj_resume_download_button:hover {
-  border-bottom-style: solid;
-  border-color: #dadada;
+  background-image: linear-gradient(-180deg, #1D95C9 0%, #17759C 100%);
+}
+
+@media (min-width: 768px) {
+  .vj_resume_download_button {
+    padding: 1rem 2rem;
+  }
 }
 
 .post.two-columns {
