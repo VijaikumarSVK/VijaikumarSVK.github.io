@@ -17,6 +17,7 @@ tags:
 author: Vijai Kumar
 paginate: true
 vj_layout: true
+vj_side_layout: false
 ---
 <p style="font-size: 80px;"><b>VIJAI KUMAR S</b></p>
 <p style="font-size: 40px;">DATA ANALYST</p>
