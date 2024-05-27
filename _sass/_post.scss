@@ -29,6 +29,28 @@
   }
 }
 
+.post.one-column {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: rem(40px);
+
+  @include media(">=sm") {
+    max-width: rem(1800px);
+    flex-direction: row;
+    margin: 0 auto;
+    padding: rem(40px) 0;
+  }
+
+  .post-content {
+    padding-bottom: rem(10px);
+
+    @include media(">=sm") {
+      flex-basis: 70%;
+      padding: 0 rem(30px) 0 rem(10px);
+    }
+  }
+}
+
 .post-content {
   overflow-x: auto;
   padding: rem(40px) 0;
