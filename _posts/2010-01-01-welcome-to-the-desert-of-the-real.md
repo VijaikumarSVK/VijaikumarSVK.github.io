@@ -23,14 +23,7 @@ vj_side_layout: false
 <p style="font-size: 40px;">DATA ANALYST</p>
 I'm a Data Analyst with a passion for turning data into actionable insights. I'm skilled in Python, SAS 9.4, SQL, Snowflake, Power BI, Machine Learning, MS Excel, PowerPoint, and Big Data Analytics. My portfolio showcases projects where I've delivered actionable recommendations, solved complex problems, and improved business performance. Explore my <a href="https://vijaikumarsvk.github.io/">portfolio</a>  or download my resume below.
 
-<!-- <a href="https://vijaikumarsvk.github.io/" class="vj_resume_download_button" color = "#000000">DOWNLOAD RESUME</a> -->
-
-<button class="vj_resume_download_button">
-  My Resume
-  <svg fill="currentColor" viewBox="0 0 24 24" class="icon">
-    <path clip-rule="evenodd" d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z" fill-rule="evenodd"></path>
-  </svg>
-</button>
+<a href="https://vijaikumarsvk.github.io/" class="vj_resume_download_button">DOWNLOAD RESUME</a>
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
