@@ -27,18 +27,18 @@ I'm a Data Analyst with a passion for turning data into actionable insights. I'm
 
 <!-- > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
 
-<div class = 'container_vj'>
-<div class = 'about_me_text_vj'>
+<!-- <div class = 'container_vj'>
+<div class = 'about_me_text_vj'> -->
 <p>
 I transitioned careers from a data entry operator to a data analyst in August 2022. I have experience with analyzing and cleaning data using SQL, SAS, and Python, along with creating data visualizations in Power BI. I'm currently a full-time Data Analyst at Strategic Research Insights, focusing on Big Data Analytics in the US healthcare industry.
-
+<br>
 I actively engage with the data community through my <a href = "https://www.linkedin.com/in/vijai-kumar-s/">LinkedIn</a> profile, regularly posting about career development, daily life as a data analyst, and industry insights. I also run a YouTube channel called <a href = "https://www.youtube.com/@encoDEcode1">"encoDEcode"</a>, where I solve coding problems daily to support my learning and share knowledge with others.
-
+<br>
 Beyond my professional pursuits, I am passionate about nature and dedicate my time to my garden, nurturing a variety of plants and even managing a bee colony. I enjoy the balance of my analytical work with the hands-on, nurturing aspects of my hobby.
 </p>
-</div>
+<!-- </div> -->
 
-<div class = 'svg_image_vj'>
+<!-- <div class = 'svg_image_vj'>
 <svg preserveAspectRatio="xMidYMid meet" data-bbox="14 28.5 172 143" viewBox="14 28.5 172 143" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kwzm93s2 svg [data-color="1"] {fill: #0F5CA0;}
 #comp-kwzm93s2 svg [data-color="2"] {fill: #303030;}</style></defs>
     <g>
@@ -60,7 +60,7 @@ Beyond my professional pursuits, I am passionate about nature and dedicate my ti
 </svg>
 </div>
 
-</div>
+</div> -->
 
 Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
 
