@@ -26,6 +26,13 @@ I'm a Data Analyst with a passion for turning data into actionable insights. I'm
 <a href="https://vijaikumarsvk.github.io/" class = "vj_resume_download_button" style="color:white;" onMouseOver="this.style.color='black'" onMouseOut="this.style.color='white'">DOWNLOAD MY RESUME</a>
 
 <!-- > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
+
+<div class = 'container_vj'>
+<div class = 'about_me_text_vj'>
+
+</div>
+
+<div class = 'svg_image_vj'>
 <svg preserveAspectRatio="xMidYMid meet" data-bbox="14 28.5 172 143" viewBox="14 28.5 172 143" height="200" width="200" xmlns="http://www.w3.org/2000/svg" data-type="color" role="presentation" aria-hidden="true" aria-label=""><defs><style>#comp-kwzm93s2 svg [data-color="1"] {fill: #0F5CA0;}
 #comp-kwzm93s2 svg [data-color="2"] {fill: #303030;}</style></defs>
     <g>
@@ -45,7 +52,9 @@ I'm a Data Analyst with a passion for turning data into actionable insights. I'm
         <path fill="#D9332E" d="M98.473 171.5l8.064-14.005H90.409l8.064 14.005z" data-color="1"></path>
     </g>
 </svg>
+</div>
 
+</div>
 
 Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
 
