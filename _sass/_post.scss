@@ -35,15 +35,15 @@
 .container_vj{
   display: flex;
   align-content: center;
-  padding: 10px;
+  padding: 30px;
 }
 .about_me_text_vj{
-  width: 1;
+  flex: 1;
   height: 500px;
   background-color: orange;
 }
 .svg_image_vj{
-  width: 1;
+  flex: 1;
   height: 500px;
   background-color: blueviolet;
 }
