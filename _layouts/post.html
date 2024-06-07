@@ -9,14 +9,16 @@
         <section class="post {% if page.vj_layout %}one-column{% elsif site.two_columns_layout %}two-columns{% else %}one-column{% endif %}">
             <article role="article" class="post-content">
                 <p class="post-info">
-                    {% if page.date %}
-                        <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
+                    <!-- {% if page.date %} -->
+                    <!-- below code is for showing date in the webpage which is we developed kind of  -->
+                        <!-- <svg class="icon-calendar" id="date"><use xlink:href="#icon-calendar"></use></svg>
                         <time class="date" datetime="{{ page.date | date_to_xmlschema }}">
-                            <!-- {% include date.html date=page.date %} -->
-                        </time>
-                    {% endif %}
-                    <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg>
-                    <span>{{ minutesText }}</span>
+                            {% include date.html date=page.date %}
+                        </time> -->
+                    <!-- {% endif %} -->
+                      <!-- below is for showing the minutes to read the poject -->
+                    <!-- <svg id="clock" class="icon-clock"><use xlink:href="#icon-clock"></use></svg> -->
+                    <!-- <span>{{ minutesText }}</span> -->
                 </p>
                 {% if page.vj_layout %}
                   <h1 class="post-title_vj">{{ page.title }}</h1>
