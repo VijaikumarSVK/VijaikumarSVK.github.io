@@ -73,9 +73,10 @@ layout: main
                         {% include read-icon.html %}
                     </a>
                     <div class="box-info">
-                        <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
+                      <!-- below commented block shows the date of the post created -->
+                        <!-- <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
                             {% include date.html date=post.date %}
-                        </time>
+                        </time> -->
                         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                             <h2 class="post-title">
                                 {{ post.title }}
