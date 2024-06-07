@@ -9,76 +9,11 @@ permalink: /about/
 
 <img class="img-rounded" src="/assets/img/uploads/profile.png" alt="Vijai Kumar" width="400">
 
+# About
 
-<p style="font-size: 50px;"><b>VIJAI KUMAR S</b></p>
-<p style="font-size: 30px;">DATA ANALYST</p>
-I'm a Data Analyst with a passion for turning data into actionable insights. I'm skilled in Python, SAS 9.4, SQL, Snowflake, Power BI, Machine Learning, MS Excel, PowerPoint, and Big Data Analytics. My portfolio showcases projects where I've delivered actionable recommendations, solved complex problems, and improved business performance. Explore my <b><a href="https://vijaikumarsvk.github.io/">portfolio</a></b>  or download my resume below.
-
-<a href="https://drive.google.com/file/d/1Cq7U58bsMB4uf3tslzLcMrEF_j-I39vy/view?usp=sharing" class = "vj_resume_download_button" style="color:white;" onMouseOver="this.style.color='black'" onMouseOut="this.style.color='white'">DOWNLOAD MY RESUME</a>
-
-<!-- > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
-
-<!-- <div class = 'container_vj'>
-<div class = 'about_me_text_vj'> -->
-<h3 style = "max-width: 1120px;">ABOUT ME</h3>
-<p>
-I transitioned careers from a data entry operator to a data analyst in August 2022. I have experience with analyzing and cleaning data using SQL, SAS, and Python, along with creating data visualizations in Power BI. I'm currently a full-time Data Analyst at Strategic Research Insights, focusing on Big Data Analytics in the US healthcare industry.
-<br><br>
-I actively engage with the data community through my <b><a href = "https://www.linkedin.com/in/vijai-kumar-s/">LinkedIn</a></b> profile, regularly posting about career development, daily life as a data analyst, and industry insights. I also run a YouTube channel called <b><a href = "https://www.youtube.com/@encoDEcode1">encoDEcode</a></b>, where I solve coding problems daily to support my learning and share knowledge with others.
-<br><br>
-Beyond my professional pursuits, I am passionate about nature and dedicate my time to my garden, nurturing a variety of plants and even managing a bee colony. I enjoy the balance of my analytical work with the hands-on, nurturing aspects of my hobby.
-</p>
-
-<h3 style = "max-width: 1120px;">PROFESSIONAL EXPERIENCE</h3>
-<p><b>Strategic Research insights | Analyst L2 - Big Data Analysis</b><br>
-August,2022–Present | Chennai, India</p>
-
-<ul style = "box-sizing: unset; padding: 0px;">
-  <li style = "padding: 0px;"><b>Data-Driven Insights:</b> Leveraged 2+ years of experience in US healthcare Big Data Analytics to extract actionable insights from complex datasets, driving strategic decision-making for clients.</li>
-  <li style = "padding: 0px;"><b>Automated Efficiency:</b> Developed and automated a comprehensive 50+ slide Power BI dashboard using Python, reducing manual workload by 95% and significantly enhancing efficiency.</li>
-  <li style = "padding: 0px;"><b>Data Expertise:</b> Proficiently handled diverse healthcare datasets, including US claims data, prescription data (NBRx, TRx), physician data, and Anonymous Patient-Level Data (APLD).</li>
-  <li style = "padding: 0px;"><b>High-Impact Results:</b> Maintained a 98% accuracy rate on deliverables, streamlined tasks for a 30% efficiency boost, and consistently exceeded expectations by delivering 90% of tasks ahead of schedule while ensuring 95% alignment with client requirements.</li>
-  <li style = "padding: 0px;"><b>Analytical Tools Mastery:</b> Utilized SAS and Python for advanced data analysis, processing large datasets, and automating tasks, resulting in a 40% project efficiency improvement and halving data processing times.</li>
-  <li style = "padding: 0px;"><b>Client-Focused Approach:</b> Successfully addressed ad-hoc client requests, prepared and cleaned data, analyzed product and competitor trends, and developed quality control checklists, leading to increased client satisfaction.</li>
-  <li style = "padding: 0px;"><b>Machine Learning Exploration:</b> Explored and implemented machine learning concepts to enhance project outcomes and analytical capabilities.</li>
-</ul>  
-
-<h3 style = "max-width: 1120px;">Education</h3>
-<p><b>Master of Computer Applications (MCA)</b><br>
-College of Engineering(Anna University) | Chennai, India | 2020 - 2022</p>
-
-<ul style = "box-sizing: unset; padding: 0px;">
-  <li style = "padding: 0px;"><b>CGPA:</b> 8.5/10</li>
-  <li style = "padding: 0px;"><b>Focus:</b> Data Analytics and Emerging Technologies</li>
-  <li style = "padding: 0px;"><b>Key Skills Developed:</b> Python, SQL, Power BI, Data Visualization, Big Data Analytics, Machine Learning, Cloud Computing, Cyber Security, Blockchain Technology, Internet of Things.</li>
-  <li style = "padding: 0px;"><b>Relevant Coursework:</b> Artificial Intelligence, Machine Learning, Data Analytics, Big Data, Cloud Computing, Cyber Security, Internet of Things, Blockchain Technology.</li>
-</ul>  
-
-
-<p><b>Bachelor of Science in Computer Science</b><br>
-Veltech Ranga Sankum Arts College | Chennai, India | 2016 - 2019</p>
-
-<ul style = "box-sizing: unset; padding: 0px;">
-  <li style = "padding: 0px;"><b>CGPA:</b> 6.7/10</li>
-  <li style = "padding: 0px;"><b>Focus:</b> Computer Science Fundamentals</li>
-  <li style = "padding: 0px;"><b>Key Skills Developed:</b> Programming, Data Structures, Algorithms, Software Development, Database Management, Operating Systems, Computer Architecture.</li>
-  <li style = "padding: 0px;"><b>Relevant Coursework:</b> Operating Systems, Database Management Systems, Computer Architecture and Organization, Object-Oriented Analysis and Design, Software Engineering.</li>
-</ul>  
-
-
-<h3 style = "max-width: 1120px;">SKILLS</h3>
-<p>I am a versatile data professional with a diverse skillset, encompassing data manipulation, analysis, visualization, and presentation. I am adept at utilizing both technical tools like Python, SQL, Power BI and traditional business applications like Excel and PowerPoint to effectively communicate data insights.
-</p>
-
-|      Name       |                         Link                          |
-| :----------------: | :---------------------------------------------------: |
-|       `Python`        |      <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="48"/> </a>        |
-|       `SAS`        |      <a href="https://www.sas.com/en_in/home.html" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/S/sas-logo-5B2DD6956B-seeklogo.com.png" alt="sas" width="48"/> </a>       |
-|       `Pandas`        |      <a href="https://pandas.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/2ae2a900d2f041da66e950e4d48052658d850630/icons/pandas/pandas-original.svg" alt="pandas" width="48"/> </a>       |
-|       `Scikit`        |      <a href="https://scikit-learn.org/" target="_blank" rel="noreferrer"> <img src="https://upload.wikimedia.org/wikipedia/commons/0/05/Scikit_learn_logo_small.svg" alt="scikit_learn" width="48"/> </a>       |
-|       `Seaborn`        |      <a href="https://seaborn.pydata.org/" target="_blank" rel="noreferrer"> <img src="https://seaborn.pydata.org/_images/logo-mark-lightbg.svg" alt="seaborn" width="48"/> </a>       |
-|       `Power BI`        |      <a href="https://powerbi.microsoft.com/en-us/desktop/" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/P/power-bi-icon-logo-E1B451ED39-seeklogo.com.png" alt="powerbi" width="48"/> </a>       |
-|       `SQL`        |      <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="48"/> </a>       |
-|       `Excel`        |      <a href="https://www.microsoft.com/en-in/microsoft-365/excel" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/E/excel-logo-7C7437414C-seeklogo.com.png" alt="excel" width="48"/> </a>       |
-|       `Powerpoint`        |      <a href="https://www.microsoft.com/en-in/microsoft-365/powerpoint" target="_blank" rel="noreferrer"> <img src="https://seeklogo.com/images/M/microsoft-powerpoint-logo-5377A49D19-seeklogo.com.png" alt="power point" width="48"/> </a>         |
-|       `Git`        |      <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="48"/> </a>       |
+Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
