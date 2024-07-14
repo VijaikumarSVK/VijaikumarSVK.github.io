@@ -9,7 +9,7 @@ optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380
 category: Aviation
 tags:
   - books
-  - diet
+  - diet_vj
   - coding
 author: mranderson
 paginate: true
