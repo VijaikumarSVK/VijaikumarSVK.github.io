@@ -20,22 +20,33 @@ This Tableau project is a step-by-step learning experience in building dashboard
 
 Link for [Tableau - HR Dashboard](https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
-> Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+<!-- > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit. -->
 
-Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+<!-- Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur. -->
 
 <!--page-->
 
-## Inline HTML elements
+## User Story - HR Dashboard
+As an HR manager, I want a comprehensive dashboard to analyze human resources data, providing both summary views for high-level insights and detailed employee records for in-depth analysis
 
-HTML defines a long list of available inline tags, a complete list of which can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+### Summary View
+The summary view should be divided into three main sections: Overview, Demographics, and Income Analysis
 
+#### Overview
+The Overview section should provide a snapshot of the overall HR metrics, including:
+
+- Display the total number of hired employees, active employees, and terminated employees.
+- Visualize the total number of hired and terminated employees over the years.
+- Present a breakdown of total employees by department and job titles.
+- Compare total employees between headquarters (HQ) and branches (New York is the HQ)
+- Show the distribution of employees by city and state.
+<!--
 - **To bold text**, use `<strong>`.
 - *To italicize text*, use `<em>`.
 - Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
 - Citations, like <cite>&mdash; Thomas A. Anderson</cite>, should use `<cite>`.
 - <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
-- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`.
+- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`. -->
 
 Most of these elements are styled by browsers with few modifications on our part.
 
