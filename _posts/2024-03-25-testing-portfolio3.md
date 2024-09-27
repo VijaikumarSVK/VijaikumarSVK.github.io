@@ -1,17 +1,16 @@
 ---
 date: 2024-03-05 12:26:40
 layout: post
-title: Why books should be your priority vijai?
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: https://res.cloudinary.com/dm7h7e8xj/image/upload/v1559822138/theme9_v273a9.jpg
-optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1559822138/theme9_v273a9.jpg
-category: Aviation
+title: Tableau Project - HR Dashboard
+subtitle: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
+description: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
+image: https://res.cloudinary.com/dqqjik4em/image/upload/v1727449780/HR_dashboard.png
+optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/HR_dashboard
+category: Visualization
 tags:
-  - books
-  - diet_vj
-  - coding
-author: mranderson
+  - Tableau
+  - Chat GPT
+author: Vijai Kumar
 paginate: true
 vj_layout: false
 vj_side_layout: true
