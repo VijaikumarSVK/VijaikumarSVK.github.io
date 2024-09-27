@@ -58,9 +58,9 @@ The income analysis section should focus on salary-related metrics, including:
 
 
 ### Data Generation(Chat-GPT Prompts)
-Python script to generate a realistic dataset of 8950 records for human resources. The dataset should include the following attributes:
-1.Employee ID: A unique identifier.
-2.First Name: Randomly generated.
+Python script to generate a realistic dataset of 8950 records for human resources. The dataset should include the following attributes:<br>
+1.Employee ID: A unique identifier.<br>
+2.First Name: Randomly generated.<br>
 3.Last Name: Randomly generated.
 4.Gender: Randomly chosen with a 46% probability for ‘Female’ and a 54% probability for ‘Male’.
 5.State and City: Randomly assigned from a predefined list of states and their cities.
