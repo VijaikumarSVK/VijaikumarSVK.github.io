@@ -42,6 +42,7 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 - Show the distribution of employees by city and state.
 
 <p>hey there</p>
+<p style="color:blue;font-size:18px; >hey there</p>
 
 Most of these elements are styled by browsers with few modifications on our part.
 
