@@ -40,13 +40,8 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 - Present a breakdown of total employees by department and job titles.
 - Compare total employees between headquarters (HQ) and branches (New York is the HQ)
 - Show the distribution of employees by city and state.
-<!--
-- **To bold text**, use `<strong>`.
-- *To italicize text*, use `<em>`.
-- Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
-- Citations, like <cite>&mdash; Thomas A. Anderson</cite>, should use `<cite>`.
-- <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
-- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`. -->
+
+<p>hey there</p>
 
 Most of these elements are styled by browsers with few modifications on our part.
 
