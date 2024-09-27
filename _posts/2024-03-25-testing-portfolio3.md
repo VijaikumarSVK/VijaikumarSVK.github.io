@@ -44,115 +44,20 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 #### Demographics
 The Demographics section should offer insights into the composition of the workforce, including:
 
--Display the total number of hired employees, active employees, and terminated employees.
--Visualize the total number of hired and terminated employees over the years.
--Present a breakdown of total employees by department and job titles.
--Compare total employees between headquarters (HQ) and branches (New York is the HQ)
--Show the distribution of employees by city and state.
-
-
 - Present the gender ratio in the company.
 - Visualize the distribution of employees across age groups and education levels.
 - Show the total number of employees within each age group.
 - Show the total number of employees within each education level.
 - Present the correlation between employees’s educational backgrounds and their performance ratings.
-<!--page-->
 
-# Heading 1
+### Income
+The income analysis section should focus on salary-related metrics, including:
 
-## Heading 2
+- Compare salaries across different education levels for both genders to identify any discrepancies or patterns.
+- Present how the age correlate with the salary for employees in each department.
 
-### Heading 3
+### Summary View
+- Provide a comprehensive list of all employees with necessary information such as name, department, position, gender, age, education, and salary.
+- Users should be able to filter the list based on any of the available columns.
 
-#### Heading 4
-
-Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-## Code
-
-Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
-
-```js
-// Example can be run directly in your JavaScript console
-
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder = new Function("a", "b", "return a + b");
-
-// Call the function
-adder(2, 6);
-// > 8
-```
-
-<!--page-->
-
-Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-
-## Lists
-
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
-
-* Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-* Donec id elit non mi porta gravida at eget metus.
-* Nulla vitae elit libero, a pharetra augue.
-
-Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
-
-1. Vestibulum id ligula porta felis euismod semper.
-2. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-3. Maecenas sed diam eget risus varius blandit sit amet non magna.
-
-<!--page-->
-
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
-
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-## Images
-
-Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
-
-![placeholder](https://placehold.it/800x400 "Large example image")
-![placeholder](https://placehold.it/400x200 "Medium example image")
-![placeholder](https://placehold.it/200x200 "Small example image")
-
-## Tables
-
-Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-<!--page-->
-
-Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+For downloading Data Generation code and Tableau please visit [Github](https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
