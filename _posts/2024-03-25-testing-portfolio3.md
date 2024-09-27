@@ -41,17 +41,21 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 - Compare total employees between headquarters (HQ) and branches (New York is the HQ)
 - Show the distribution of employees by city and state.
 
+#### Demographics
+The Demographics section should offer insights into the composition of the workforce, including:
 
-* Display the total number of hired employees, active employees, and terminated employees.
-* Visualize the total number of hired and terminated employees over the years.
-* Present a breakdown of total employees by department and job titles.
-* Compare total employees between headquarters (HQ) and branches (New York is the HQ)
-* Show the distribution of employees by city and state.
+-Display the total number of hired employees, active employees, and terminated employees.
+-Visualize the total number of hired and terminated employees over the years.
+-Present a breakdown of total employees by department and job titles.
+-Compare total employees between headquarters (HQ) and branches (New York is the HQ)
+-Show the distribution of employees by city and state.
 
-<p>hey there</p>
 
-Most of these elements are styled by browsers with few modifications on our part.
-
+- Present the gender ratio in the company.
+- Visualize the distribution of employees across age groups and education levels.
+- Show the total number of employees within each age group.
+- Show the total number of employees within each education level.
+- Present the correlation between employees’s educational backgrounds and their performance ratings.
 <!--page-->
 
 # Heading 1
