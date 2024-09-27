@@ -3,8 +3,8 @@ date: 2024-03-05 12:26:40
 layout: post
 title: Tableau - HR Dashboard
 <!-- subtitle: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects. -->
-description: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
-image: <a href="https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">https://res.cloudinary.com/dqqjik4em/image/upload/v1727449780/HR_dashboard.png</a>
+description: This Tableau project provides a step-by-step guide to building professional dashboards, mirroring real-world scenarios.
+image: https://res.cloudinary.com/dqqjik4em/image/upload/v1727449780/HR_dashboard.png
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/HR_dashboard
 category: Visualization
 tags:
@@ -17,6 +17,8 @@ vj_side_layout: true
 ---
 
 This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
+
+Link for [Tableau - HR Dashboard](https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
