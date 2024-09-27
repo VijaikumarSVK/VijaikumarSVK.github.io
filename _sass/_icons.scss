@@ -39,8 +39,8 @@
   .icon {
     @include align(both);
     @include size(100, 100);
-    // fill: $accentDark;
-    fill: yellow;
+    fill: $accentDark;
+    // fill: yellow;
     animation: pulse 1.3s infinite;
   }
 }
