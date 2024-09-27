@@ -4,7 +4,7 @@ layout: post
 title: Tableau - HR Dashboard
 <!-- subtitle: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects. -->
 description: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
-image: https://res.cloudinary.com/dqqjik4em/image/upload/v1727449780/HR_dashboard.png
+image: <a href="https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link">https://res.cloudinary.com/dqqjik4em/image/upload/v1727449780/HR_dashboard.png</a>
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/HR_dashboard
 category: Visualization
 tags:
