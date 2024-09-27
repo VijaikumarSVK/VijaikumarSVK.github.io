@@ -41,8 +41,14 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 - Compare total employees between headquarters (HQ) and branches (New York is the HQ)
 - Show the distribution of employees by city and state.
 
+
+* Display the total number of hired employees, active employees, and terminated employees.
+* Visualize the total number of hired and terminated employees over the years.
+* Present a breakdown of total employees by department and job titles.
+* Compare total employees between headquarters (HQ) and branches (New York is the HQ)
+* Show the distribution of employees by city and state.
+
 <p>hey there</p>
-<p style="color:blue;font-size:18px; >hey there</p>
 
 Most of these elements are styled by browsers with few modifications on our part.
 
