@@ -122,6 +122,9 @@ layout: main
 {% if site.linkedin_username %}
     {% assign social_urls = social_urls | append: '"https://www.linkedin.com/in/' | append: site.linkedin_username | append: '",' %}
 {% endif %}
+{% if site.youtube_username %}
+    {% assign social_urls = social_urls | append: '"https://www.youtube.com/' | append: site.youtube_username | append: '",' %}
+{% endif %}
 
 <script type="application/ld+json">
 {
