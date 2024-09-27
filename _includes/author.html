@@ -43,6 +43,11 @@
             <svg><use xlink:href="#icon-linkedin"></use></svg>
           </a>
         {% endif %}
+        {% if author.youtube_username %}
+          <a href="https://www.youtube.com{{ author.youtube_username }}" title="YouTube">
+            <svg><use xlink:href="#icon-github"></use></svg>
+          </a>
+        {% endif %}
       </p>
     </div>
   </section>
@@ -66,7 +71,9 @@
   {% if author.linkedin_username %}
       {% assign author_urls = author_urls | append: '"https://www.linkedin.com/in/' | append: author.linkedin_username | append: '",' %}
   {% endif %}
-
+  {% if author.youtube_username %}
+      {% assign author_urls = author_urls | append: '"https://www.youtube.com' | append: author.youtube_username | append: '",' %}
+  {% endif %}
   <script type="application/ld+json">
   {
       "@context": "http://schema.org",
