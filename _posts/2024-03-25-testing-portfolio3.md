@@ -40,17 +40,17 @@ The Overview section should provide a snapshot of the overall HR metrics, includ
 #### Demographics
 The Demographics section should offer insights into the composition of the workforce, including:<br>
 
-1) Present the gender ratio in the company.:<br>
-2) Visualize the distribution of employees across age groups and education levels.:<br>
-3) Show the total number of employees within each age group.:<br>
-4) Show the total number of employees within each education level.:<br>
-5) Present the correlation between employees’s educational backgrounds and their performance ratings.:<br>
+1) Present the gender ratio in the company.<br>
+2) Visualize the distribution of employees across age groups and education levels.<br>
+3) Show the total number of employees within each age group.<br>
+4) Show the total number of employees within each education level.<br>
+5) Present the correlation between employees’s educational backgrounds and their performance ratings.<br>
 
 #### Income
-The income analysis section should focus on salary-related metrics, including::<br>
+The income analysis section should focus on salary-related metrics, including:<br>
 
-1) Compare salaries across different education levels for both genders to identify any discrepancies or patterns.:<br>
-2) Present how the age correlate with the salary for employees in each department.:<br>
+1) Compare salaries across different education levels for both genders to identify any discrepancies or patterns.<br>
+2) Present how the age correlate with the salary for employees in each department.<br>
 
 ### Summary View
 - Provide a comprehensive list of all employees with necessary information such as name, department, position, gender, age, education, and salary.
