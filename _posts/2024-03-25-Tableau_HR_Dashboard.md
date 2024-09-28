@@ -52,10 +52,11 @@ The income analysis section should focus on salary-related metrics, including:<b
 1) Compare salaries across different education levels for both genders to identify any discrepancies or patterns.<br>
 2) Present how the age correlate with the salary for employees in each department.<br>
 
-### Summary View
+### Employee Records View
 - Provide a comprehensive list of all employees with necessary information such as name, department, position, gender, age, education, and salary.
 - Users should be able to filter the list based on any of the available columns.
 
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1727491255/HR_Details.png)
 
 ### Data Generation(Chat-GPT Prompts)
 Python script to generate a realistic dataset of 8950 records for human resources. The dataset should include the following attributes:<br>
