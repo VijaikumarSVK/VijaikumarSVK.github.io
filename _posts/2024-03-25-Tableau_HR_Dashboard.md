@@ -16,63 +16,70 @@ vj_layout: false
 vj_side_layout: true
 ---
 
-This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects.
-
 Link for [Tableau - HR Dashboard](https://public.tableau.com/views/HR_Analytics_17259358090400/HRSummary?:language=en-US&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link)
 
 For downloading Data Generation code and Tableau File please visit [HR Analytics - Tableau(Github)](https://github.com/VijaikumarSVK/HR-Analytics---Tableau-Dashboard)
 
 ## User Story - HR Dashboard
-As an HR manager, I want a comprehensive dashboard to analyze human resources data, providing both summary views for high-level insights and detailed employee records for in-depth analysis
+As an HR manager, my objective is to develop a comprehensive dashboard capable of providing both high-level and granular insights into our human resources data. This dashboard will facilitate strategic decision-making by offering summary views for overall workforce trends, while also allowing for deep dives into individual employee records when more detailed analysis is required.
 
 ### Summary View
-The summary view should be divided into three main sections: Overview, Demographics, and Income Analysis
+The summary view of the dashboard will be structured into three primary sections: Overview, Demographics, and Income Analysis. Each section will be designed to provide key insights at a glance.
 
 #### Overview
-The Overview section should provide a snapshot of the overall HR metrics, including:<br>
+TThis section aims to provide a comprehensive overview of the company's key HR metrics.  I have designed it to offer insights into the workforce composition and distribution at a glance. The section encompasses the following aspects:
 
-1) Display the total number of hired employees, active employees, and terminated employees.<br>
-2) Visualize the total number of hired and terminated employees over the years.<br>
-3) Present a breakdown of total employees by department and job titles.<br>
-4) Compare total employees between headquarters (HQ) and branches (New York is the HQ)<br>
-5) Show the distribution of employees by city and state.<br>
+1. **Employee Headcount:**  A clear presentation of the total number of hired, active, and terminated employees, providing a snapshot of the current workforce size and turnover.
+
+2. **Hiring and Termination Trends:**  A visualization depicting the total number of hired and terminated employees over the years, enabling the identification of historical trends in workforce growth and attrition.
+
+3. **Departmental and Job Title Analysis:** A breakdown of the total employee count by department and respective job titles. This analysis facilitates understanding workforce distribution across different departments and roles.
+
+4. **Headquarters vs. Branch Comparison:** A comparison of the total number of employees based in the headquarters (HQ) versus those situated in branches, with New York designated as the HQ location. This comparison highlights the concentration of the workforce.
+
+5. **Geographical Distribution:** A comprehensive view of employee distribution by city and state, providing insights into the geographical reach and concentration of the workforce.
+
 
 #### Demographics
-The Demographics section should offer insights into the composition of the workforce, including:<br>
-
-1) Present the gender ratio in the company.<br>
-2) Visualize the distribution of employees across age groups and education levels.<br>
-3) Show the total number of employees within each age group.<br>
-4) Show the total number of employees within each education level.<br>
-5) Present the correlation between employees’s educational backgrounds and their performance ratings.<br>
+This section delves into the composition of the workforce, providing insights into:
+1. **Gender Distribution:**  An analysis of the gender ratio within the company.
+2. **Age and Education Demographics:** Visual representations of employee distribution across various age groups and education levels.
+3. **Age Group Breakdown:**  A numerical representation of the total number of employees within each designated age group.
+4. **Education Level Breakdown:** A numerical representation of the total number of employees within each designated education level.
+5. **Performance by Education:** An examination of the correlation between employee educational backgrounds and their corresponding performance ratings.
 
 #### Income
-The income analysis section should focus on salary-related metrics, including:<br>
+This section centers on salary-related metrics, with a focus on:
 
-1) Compare salaries across different education levels for both genders to identify any discrepancies or patterns.<br>
-2) Present how the age correlate with the salary for employees in each department.<br>
+ 1. **Salary by Education and Gender:** A comparative analysis of salaries across different education levels, disaggregated by gender, to ascertain any potential discrepancies or patterns.
+ 2. **Salary by Age and Department:** An examination of the correlation between age and salary for employees within each department.
 
 ### Employee Records View
-- Provide a comprehensive list of all employees with necessary information such as name, department, position, gender, age, education, and salary.
-- Users should be able to filter the list based on any of the available columns.
+This section will house a comprehensive roster encompassing all employees, complete with pertinent details including:
+
+ - **Employee Information:**  Name, Department, Position, Gender, Age, Education, and Salary.
+
+To facilitate efficient data exploration, users will have the ability to filter the roster based on any of the aforementioned columns.
 
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1727491255/HR_Details.png)
 
 ### Data Generation(Chat-GPT Prompts)
-Python script to generate a realistic dataset of 8950 records for human resources. The dataset should include the following attributes:<br>
-1) Employee ID: A unique identifier.<br>
-2) First Name: Randomly generated.<br>
-3) Last Name: Randomly generated.<br>
-4) Gender: Randomly chosen with a 46% probability for ‘Female’ and a 54% probability for ‘Male’.<br>
-5) State and City: Randomly assigned from a predefined list of states and their cities.<br>
-6) Hire Date: Randomly generated with custom probabilities for each year from 2015 to 2024.<br>
-7) Department: Randomly chosen from a list of departments with specified probabilities.<br>
-8) Job Title: Randomly selected based on the department, with specific probabilities for each job title within the department.<br>
-9) Education Level: Determined based on the job title, chosen from a predefined mapping of job titles to education levels.<br>
-10) Performance Rating: Randomly selected from ‘Excellent’, ‘Good’, ‘Satisfactory’, ‘Needs Improvement’ with specified probabilities.<br>
-11) Overtime: Randomly chosen with a 30% probability for ‘Yes’ and a 70% probability for ‘No’.<br>
-12) Salary: Generated based on the department and job title, within specific ranges.<br>
-13) Birth Date: Generated based on age group distribution and job title requirements, ensuring consistency with the hire date.<br>
-14) Termination Date: Assigned to a subset of employees (11.2% of the total) with specific probabilities for each year from 2015 to 2024, ensuring the termination date is at least 6 months after the hire date.<br>
-15) Adjusted Salary: Calculated based on gender, education level, and age, applying specific multipliers and increments.<br>
-16) Be sure to structure the code cleanly, using functions where appropriate, and include comments to explain each step of the process.<br>  
+This Python script generates a synthetic dataset containing 8950 employee records for human resources purposes. The dataset incorporates a degree of realism by adhering to specified probabilities and correlations between attributes.
+
+**Generated Attributes:**
+
+1. **Employee ID:** A unique identifier assigned to each employee.
+2. **First Name:** Randomly generated.
+3. **Last Name:** Randomly generated.
+4. **Gender:** Randomly assigned with a 46% probability for 'Female' and a 54% probability for 'Male', reflecting a plausible gender distribution.
+5. **State and City:** Randomly selected from a predefined list of states and their corresponding cities, ensuring geographical diversity.
+6. **Hire Date:** Randomly generated within a specified range (2015-2024), employing custom probabilities for each year to simulate hiring trends.
+7. **Department:** Randomly assigned from a list of departments with predefined probabilities, reflecting the organizational structure.
+8. **Job Title:** Randomly selected based on the assigned department, adhering to probabilities associated with each job title within that department.
+9. **Education Level:** Determined based on the assigned job title, utilizing a predefined mapping between job titles and typical education level requirements.
+10. **Performance Rating:**  Randomly allocated from a set of ratings ('Excellent', 'Good', 'Satisfactory', 'Needs Improvement') with specific probabilities, representing a performance distribution.
+11. **Overtime:**  Randomly assigned with a 30% probability for 'Yes' and a 70% probability for 'No', simulating overtime patterns.
+12. **Salary:** Generated within a range determined by the assigned department and job title, reflecting realistic salary structures.
+13. **Birth Date:** Generated to align with age group distribution and job title requirements, ensuring consistency with the employee's hire date.
+14. **Termination Date:**  Assigned to a subset of employees (11.2%) to simulate employee turnover. The termination year is randomly selected from 2015 to 2024 with specific probabilities, while ensuring a minimum six-month gap between the hire date and termination date.
+15. **Adjusted Salary:** Calculated by factoring in gender, education level, and age, applying specific multipliers and increments to simulate potential pay disparities.
