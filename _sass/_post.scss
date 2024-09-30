@@ -162,8 +162,8 @@
     margin: rem(5px) auto rem(10px);
     padding-top: 0;
 
-    @include media(">=sm") {
-      font-size: rem(30px);
+    @include media(">=md") {
+      font-size: rem(40px);
     }
   }
   h1.post-title_vj {
