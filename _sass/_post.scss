@@ -168,10 +168,14 @@
     padding-top: 0;
     text-align: center;
     font-size: 60px;
-    @include media(">=sm") {
-      font-size: 60px;
-    }
   }
+
+  @media (min-width: 400px) {
+    .post-title_vj h1 {
+        margin-top: 0;
+        font-size: 30px;
+    }
+}
 
   p.post-subtitle {
     color: darken($lightGray, 30%);
