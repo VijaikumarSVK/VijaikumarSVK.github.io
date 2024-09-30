@@ -161,10 +161,6 @@
     line-height: 1.2;
     margin: rem(5px) auto rem(10px);
     padding-top: 0;
-
-    @include media(">=sm") {
-      font-size: rem(30px);
-    }
   }
   h1.post-title_vj {
     line-height: 1.2;
@@ -172,6 +168,9 @@
     padding-top: 0;
     text-align: center;
     font-size: 60px;
+    @include media(">=sm") {
+      font-size: rem(30px);
+    }
   }
 
   p.post-subtitle {
