@@ -1,5 +1,5 @@
 ---
-date: 2024-03-18 12:26:40
+date: 2024-03-17 12:26:40
 layout: post
 title: Earthquake Analysis
 subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
