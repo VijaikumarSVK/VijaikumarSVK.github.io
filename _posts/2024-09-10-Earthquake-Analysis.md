@@ -1,9 +1,9 @@
 ---
 date: 2024-09-10 12:26:40
 layout: post
-title: Earthquake Analysis
-subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+title: Earthquake Data Analysis
+subtitle: Unveiling Seismic Secrets: An In-Depth Analysis of Earthquake Data
+description: Harnessing Python and Machine Learning to Explore Earthquake Patterns and Predict Magnitude
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1728968285/Earthquake_cover_image.jpg
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Earthquake_cover_image
 category: css
@@ -15,7 +15,7 @@ vj_layout: false
 vj_side_layout: true
 ---
 
-Cas sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
+Earthquakes, a testament to the immense power hidden beneath our feet, have captivated and terrified humanity for millennia. These seismic events, though destructive, hold a fascinating complexity that begs to be understood. This project delves into the depths of historical earthquake data, leveraging the flexibility of Python and the power of machine learning to uncover hidden patterns and explore the potential for predicting earthquake magnitude.
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
