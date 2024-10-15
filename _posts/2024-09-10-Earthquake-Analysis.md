@@ -17,6 +17,8 @@ vj_side_layout: true
 
 Earthquakes, a testament to the immense power hidden beneath our feet, have captivated and terrified humanity for millennia. These seismic events, though destructive, hold a fascinating complexity that begs to be understood. This project delves into the depths of historical earthquake data, leveraging the flexibility of Python and the power of machine learning to uncover hidden patterns and explore the potential for predicting earthquake magnitude.
 
+The complete Python code for this analysis is available on my GitHub: [Insert GitHub link].
+
 ## Data and Methodology
 Our journey begins with a rich dataset sourced from <b><a href="https://seismic.pmd.gov.pk/">Pakistan Meteorological Department</a></b>, documenting a comprehensive record of earthquakes around the world. Each entry in the dataset captures key characteristics of an earthquake, including:
 
@@ -62,65 +64,64 @@ Investigating earthquake magnitudes by region highlights the uneven distribution
 
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729007252/Country_wise_EQ.jpg)
 
+#### Depth vs. Magnitude
+Delving deeper, we explored the relationship between an earthquake’s depth and its magnitude. A scatter plot, visualizing these two variables, provides insights into whether deeper earthquakes tend to be more or less intense.
 
-* Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-* Donec id elit non mi porta gravida at eget metus.
-* Nulla vitae elit libero, a pharetra augue.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729008035/Dp_Vs_mag_wise_EQ.jpg)
 
-Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+#### Detection Methods
+Analyzing the distribution of earthquake detection methods — automatic vs. manual — offers a glimpse into how these events are captured and verified. Understanding the prevalence of each method sheds light on potential biases or inconsistencies in the data.
 
-1. Vestibulum id ligula porta felis euismod semper.
-2. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-3. Maecenas sed diam eget risus varius blandit sit amet non magna.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729008228/Detection_method.jpg)
 
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
 
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
+## Feature Engineering
+Feature engineering is for transforming raw data into a format suitable for machine learning algorithms. This crucial step often involves creating new features from existing ones to enhance the model's predictive power. In our analysis, we engineered two new features:
 
-## Images
+- **Hour of the Day:** Recognizing that earthquake occurrences might exhibit diurnal patterns, we extracted the hour from the time column. This feature could reveal if earthquakes are more likely to strike at certain times.
 
-Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
+- **Country:** Using a Geocoding API, we mapped the latitude and longitude of each earthquake to its corresponding country. This added geographical context could unveil regional variations in earthquake frequency and magnitude.
 
-![placeholder](https://placehold.it/800x400 "Large example image")
-![placeholder](https://placehold.it/400x200 "Medium example image")
-![placeholder](https://placehold.it/200x200 "Small example image")
+```js
+# Using Geocode API for find the country using Region
+row = 1
+def location_finder(lat,lon):
+    global row
+    row = row + 1
+    print(row)
+    try:        
+        response = requests.get(f'https://geocode.maps.co/reverse?lat={str(lat)}&lon={str(lon)}&api_key = API_KEY')
+        res = response.json()
+        try:
+            return res['address']['country']
+        except:
+            return 'No country'
+        except:
+            return 'No country'
 
-## Tables
+EQ_df['Country'] = np.vectorize(location_finder)(EQ_df['Latitude'],EQ_df['Longitude'])
+```
 
-Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+## Predictive Modeling
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
+With our data fortified with insightful features, we set out to build a machine learning model capable of predicting earthquake magnitude. For this task, we chose the Random Forest Regressor, a robust algorithm well-suited for handling complex, non-linear relationships in data.
 
-Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo.
+The model training involved splitting the dataset into training and testing sets. The Random Forest was trained on the training set and its performance evaluated on the unseen testing set using:
+
+- **Mean Squared Error (MSE):** Quantifies the average squared difference between predicted and actual magnitudes. Lower MSE values indicate better model accuracy. <br>
+<b>MSE Score: 15.68%</b>
+
+- **R-squared (R2) Score:** Using a Geocoding API, we mapped the latitude and longitude of each earthquake to its corresponding country. This added geographical context could unveil regional variations in earthquake frequency and magnitude.<br>
+<b>R2 Score: 92.17%</b>
+
+## Conclusion and Looking Ahead
+This analysis has provided valuable insights into earthquake patterns and the potential for predicting their magnitude. We've uncovered temporal trends, regional variations, and relationships between depth and magnitude, showcasing the power of data exploration. Our predictive model, while a promising start, can be further enhanced through.
+
+
+1. **Expanded Datasets:** Incorporating a larger dataset with a wider temporal and geographical scope can improve model accuracy and generalizability.
+
+2. **Additional Features:** Adding features like fault line proximity, soil types, and tectonic plate movements can provide valuable geological context for prediction.
+
+3. **Algorithm Exploration:** Exploring alternative machine learning algorithms, such as gradient boosting or neural networks, might unlock even greater predictive power.
+
+The ability to forecast earthquakes holds immense potential for disaster preparedness, infrastructure planning, and ultimately, saving lives. This exploration serves as a stepping stone towards a future where we can better anticipate and mitigate the impacts of these powerful natural events.
