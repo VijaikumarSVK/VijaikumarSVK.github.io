@@ -17,30 +17,38 @@ vj_side_layout: true
 
 Earthquakes, a testament to the immense power hidden beneath our feet, have captivated and terrified humanity for millennia. These seismic events, though destructive, hold a fascinating complexity that begs to be understood. This project delves into the depths of historical earthquake data, leveraging the flexibility of Python and the power of machine learning to uncover hidden patterns and explore the potential for predicting earthquake magnitude.
 
-> Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
+## Data and Methodology
+Our journey begins with a rich dataset sourced from [mention data source], documenting a comprehensive record of earthquakes around the world. Each entry in the dataset captures key characteristics of an earthquake, including:
 
-Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
+1. **Date and Time:** Pinpointing when the earthquake struck.
 
-## Inline HTML elements
+2. **Region:** Providing a general location of the seismic event.
 
-HTML defines a long list of available inline tags, a complete list of which can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+3. **Magnitude:** Quantifying the earthquake's energy release on the Richter scale.
 
-- **To bold text**, use `<strong>`.
-- *To italicize text*, use `<em>`.
-- Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
-- Citations, like <cite>&mdash; Thomas A. Anderson</cite>, should use `<cite>`.
-- <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
-- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`.
+4. **Depth** Indicating the depth below the Earth’s surface where the earthquake originated.
 
-Most of these elements are styled by browsers with few modifications on our part.
+5. **Latitude and Longitude:** Precisely mapping the earthquake's epicenter.
 
-# Heading 1
+Before embarking on our analysis, the raw data underwent a refinement process:
 
-## Heading 2
+- **Date Transformation:** To facilitate temporal analysis, the 'Date' column, initially stored as text, was converted into a datetime object using pd.to_datetime().
 
-### Heading 3
+- **Numerical Extraction:** Latitude and Longitude information, embedded within strings, were extracted and converted to numerical values, preparing them for further analysis.
 
-#### Heading 4
+```js
+// Converting Date column into pandas date type
+EQ_df['Date'] = pd.to_datetime(EQ_df['Date'])
+print('Data frame min date is', min(EQ_df['Date']),'and max date is',max(EQ_df['Date']))
+
+// Extracting Latitude and Longitude from the data
+EQ_df['Latitude'] =  EQ_df['Latitude'].str.extract(r'(\d+\.\d+)')[0].astype(float) * EQ_df['Latitude'].str.extract(r'([NS])')[0].map({'N': 1, 'S': -1})
+EQ_df['Longitude'] =  EQ_df['Longitude'].str.extract(r'(\d+\.\d+)')[0].astype(float) * EQ_df['Longitude'].str.extract(r'([EW])')[0].map({'E': 1, 'W': -1})
+
+```
+
+
+
 
 Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
 
@@ -56,7 +64,6 @@ var adder = new Function("a", "b", "return a + b");
 
 // Call the function
 adder(2, 6);
-// > 8
 ```
 
 Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
