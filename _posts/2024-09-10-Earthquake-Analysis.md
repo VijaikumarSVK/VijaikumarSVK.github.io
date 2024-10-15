@@ -18,7 +18,7 @@ vj_side_layout: true
 Earthquakes, a testament to the immense power hidden beneath our feet, have captivated and terrified humanity for millennia. These seismic events, though destructive, hold a fascinating complexity that begs to be understood. This project delves into the depths of historical earthquake data, leveraging the flexibility of Python and the power of machine learning to uncover hidden patterns and explore the potential for predicting earthquake magnitude.
 
 ## Data and Methodology
-Our journey begins with a rich dataset sourced from [mention data source], documenting a comprehensive record of earthquakes around the world. Each entry in the dataset captures key characteristics of an earthquake, including:
+Our journey begins with a rich dataset sourced from <b><a href="https://seismic.pmd.gov.pk/">Pakistan Meteorological Department</a></b>, documenting a comprehensive record of earthquakes around the world. Each entry in the dataset captures key characteristics of an earthquake, including:
 
 1. **Date and Time:** Pinpointing when the earthquake struck.
 
@@ -46,31 +46,22 @@ EQ_df['Latitude'] =  EQ_df['Latitude'].str.extract(r'(\d+\.\d+)')[0].astype(floa
 EQ_df['Longitude'] =  EQ_df['Longitude'].str.extract(r'(\d+\.\d+)')[0].astype(float) * EQ_df['Longitude'].str.extract(r'([EW])')[0].map({'E': 1, 'W': -1})
 
 ```
+## Exploratory Data Analysis
 
+Armed with a clean and structured dataset, we embarked on Exploratory Data Analysis (EDA), a crucial step in any data science endeavor. EDA allows us to unravel the story hidden within the numbers, revealing intriguing patterns and relationships.
 
+#### Temporal Analysis: Earthquakes Through Time
+Visualizing earthquake occurrences over time unveils the dynamic nature of our planet. By plotting earthquake frequency across years, months, and even hours, we gain valuable insights into temporal trends and potential seasonality.
 
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729006420/Year_wise_EQ.jpg)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729006645/Month_wise_EQ.jpg)
 
-Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
+#### Regional Insights: Where do Earthquakes occurs more?
 
-## Code
+Investigating earthquake magnitudes by region highlights the uneven distribution of seismic activity across the globe. By calculating average magnitudes for each region, we can identify areas prone to more powerful earthquakes and those relatively calmer.
 
-Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729007252/Country_wise_EQ.jpg)
 
-```js
-// Example can be run directly in your JavaScript console
-
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder = new Function("a", "b", "return a + b");
-
-// Call the function
-adder(2, 6);
-```
-
-Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
-
-## Lists
-
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
 
 * Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
 * Donec id elit non mi porta gravida at eget metus.
