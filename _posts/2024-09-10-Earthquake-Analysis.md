@@ -1,7 +1,7 @@
 ---
 date: 2024-09-10 12:26:40
 layout: post
-title: Earthquake Data Analysis
+title: Earthquake Analysis
 subtitle: 'Unveiling Seismic Secrets: An In-Depth Analysis of Earthquake Data'
 description: Harnessing Python and Machine Learning to Explore Earthquake Patterns and Predict Magnitude
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1728971751/Earthquake_cover_image_2.jpg
@@ -17,7 +17,7 @@ vj_side_layout: true
 
 Earthquakes, a testament to the immense power hidden beneath our feet, have captivated and terrified humanity for millennia. These seismic events, though destructive, hold a fascinating complexity that begs to be understood. This project delves into the depths of historical earthquake data, leveraging the flexibility of Python and the power of machine learning to uncover hidden patterns and explore the potential for predicting earthquake magnitude.
 
-The complete Python code for this analysis is available on my GitHub: [Insert GitHub link].
+The complete Python code for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/Earthquake-Analysis">GitHub</a></b>
 
 ## Data and Methodology
 Our journey begins with a rich dataset sourced from <b><a href="https://seismic.pmd.gov.pk/">Pakistan Meteorological Department</a></b>, documenting a comprehensive record of earthquakes around the world. Each entry in the dataset captures key characteristics of an earthquake, including:
