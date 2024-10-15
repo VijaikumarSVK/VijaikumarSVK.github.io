@@ -4,8 +4,8 @@ layout: post
 title: Earthquake Data Analysis
 subtitle: 'Unveiling Seismic Secrets: An In-Depth Analysis of Earthquake Data'
 description: Harnessing Python and Machine Learning to Explore Earthquake Patterns and Predict Magnitude
-image: https://res.cloudinary.com/dqqjik4em/image/upload/v1728968285/Earthquake_cover_image.jpg
-optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Earthquake_cover_image
+image: https://res.cloudinary.com/dqqjik4em/image/upload/v1728971751/Earthquake_cover_image_2.jpg
+optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Earthquake_cover_image_2
 category: Data Science
 tags:
   - ML
