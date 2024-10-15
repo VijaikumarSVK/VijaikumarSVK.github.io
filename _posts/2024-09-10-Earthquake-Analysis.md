@@ -4,13 +4,13 @@ layout: post
 title: Earthquake Analysis
 subtitle: Lorem ipsum dolor sit amet, consectetur adipisicing elit.
 description: Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_760/v1506079212/jekflix-capa_vfhuzh.png
-optimized_image: https://res.cloudinary.com/dm7h7e8xj/image/upload/c_scale,w_380/v1506079212/jekflix-capa_vfhuzh.png
+image: https://res.cloudinary.com/dqqjik4em/image/upload/v1728968285/Earthquake_cover_image.jpg
+optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/Earthquake_cover_image
 category: css
 tags:
-  - css
-  - tips
-author: mranderson
+  - ML
+  - EDA
+author: Vijai Kumar
 vj_layout: false
 vj_side_layout: true
 ---
