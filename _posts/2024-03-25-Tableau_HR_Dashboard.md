@@ -27,7 +27,7 @@ As an HR manager, my objective is to develop a comprehensive dashboard capable o
 The summary view of the dashboard will be structured into three primary sections: Overview, Demographics, and Income Analysis. Each section will be designed to provide key insights at a glance.
 
 #### Overview
-TThis section aims to provide a comprehensive overview of the company's key HR metrics.  I have designed it to offer insights into the workforce composition and distribution at a glance. The section encompasses the following aspects:
+This section aims to provide a comprehensive overview of the company's key HR metrics.  I have designed it to offer insights into the workforce composition and distribution at a glance. The section encompasses the following aspects:
 
 1. **Employee Headcount:**  A clear presentation of the total number of hired, active, and terminated employees, providing a snapshot of the current workforce size and turnover.
 
