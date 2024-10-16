@@ -38,7 +38,7 @@ youtube_username: Vijai-the-Analyst
 show_time_bar: false
 show_modal_on_exit: false
 show_modal_on_finish_post: true
-two_columns_layout: false
+two_columns_layout: true
 # Above two_columns_layout helps to see the project in two column.
 
 # Advanced Settings
