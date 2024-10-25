@@ -70,6 +70,32 @@ The plot reveals a strong correlation between housing prices and location, with 
 
 This visualization reinforces the previous findings, showing a clear concentration of high-priced homes near the coast and in densely populated areas.
 
+### Correlations
+We explore correlations between different attributes and the target variable (median house value) using a correlation matrix. This helps us identify potentially valuable features for our model.
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729827553/scatter_matrix_plot.png)
+
+Since we are having 11 numerical column, for visual manner we will get lot of plot(121). To avoid that we are focusing on few attributes that seem most correlated
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729827659/income_vs_house_value_scatterplot.png)
+
+The correlation matrix reveals strong positive correlations between 'median_income' and 'median_house_value', suggesting its potential importance in predicting housing prices. Other attributes like 'total_rooms' and 'housing_median_age' also exhibit some correlation with the target variable.
+
+#### Feature Engineering and Experimenting their combination
+
+To improve model performance, we experiment with feature engineering by creating new features based on existing ones. We analyze the correlation of these new features with the target variable to assess their usefulness.
+
+```js
+housing['rooms_per_house'] = housing['total_rooms'] / housing['households']
+housing['bedroom_ratio'] = housing['total_bedrooms'] / housing['total_rooms']
+housing['people_per_house'] = housing['population'] / housing['households']
+corr_matrix = housing.corr()
+corr_matrix['median_house_value'].sort_values(ascending = False)
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729828040/corr_image.png)
+
+
+
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
 Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
