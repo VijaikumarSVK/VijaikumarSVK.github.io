@@ -92,7 +92,7 @@ housing['people_per_house'] = housing['population'] / housing['households']
 corr_matrix = housing.corr()
 corr_matrix['median_house_value'].sort_values(ascending = False)
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729828040/corr_image.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729828459/corr_image.png)
 
 
 
