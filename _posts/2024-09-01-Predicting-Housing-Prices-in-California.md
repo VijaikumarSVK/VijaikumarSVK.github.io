@@ -50,6 +50,25 @@ We compare the income category proportions in the overall dataset, stratified te
 
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729824366/compare_table.png)
 
+### Exploratory Data Analysis (EDA)
+Now, we dive deeper into the training data to explore relationships between attributes and identify potential patterns.
+
+#### Visualizing Geographical Data
+We begin by visualizing the geographical distribution of housing data using scatter plots. This provides a visual representation of housing density and price variations across different regions.
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729824996/Geographical_scatter_plot.png)
+
+The plot highlights areas with high housing density, like the Bay Area, Los Angeles, and San Diego, suggesting potential price premiums in these locations.
+
+##### Housing Price as per Location and Population
+We enhance the scatter plot by incorporating housing prices and population density. This allows us to observe correlations between these factors and geographical location.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729826728/housing_prices_scatterplot.png)
+
+The plot reveals a strong correlation between housing prices and location, with coastal areas exhibiting higher prices. Population density also seems to play a role, with denser areas generally having higher housing costs.
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729826867/california_housing_prices_plot.png)
+
+This visualization reinforces the previous findings, showing a clear concentration of high-priced homes near the coast and in densely populated areas.
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
