@@ -82,7 +82,6 @@ Since we are having 11 numerical column, for visual manner we will get lot of pl
 The correlation matrix reveals strong positive correlations between 'median_income' and 'median_house_value', suggesting its potential importance in predicting housing prices. Other attributes like 'total_rooms' and 'housing_median_age' also exhibit some correlation with the target variable.
 
 #### Feature Engineering and Experimenting their combination
-
 To improve model performance, we experiment with feature engineering by creating new features based on existing ones. We analyze the correlation of these new features with the target variable to assess their usefulness.
 
 ```js
@@ -93,6 +92,57 @@ corr_matrix = housing.corr()
 corr_matrix['median_house_value'].sort_values(ascending = False)
 ```
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729828459/corr_image.png)
+
+The new features, like 'rooms_per_house' and 'bedroom_ratio', provide additional information about the housing characteristics and contribute to a better understanding of the dataset.
+
+### Preparing Data for Machine Learning
+Before training our model, we need to prepare the data by addressing missing values, handling categorical attributes, and scaling numerical features.
+
+#### Data Cleaning  
+We address missing values in the 'total_bedrooms' attribute by replacing them with the median value. However, to handle potential missing values in other columns with new datasets, we implement the **Imputer** function.
+```js
+from sklearn.impute import SimpleImputer
+imputer = SimpleImputer(strategy = 'median')
+// Finding the numerical in the Data Frame
+housing_num = housing.select_dtypes(include=[np.number])
+imputer.fit(housing_num)
+// Tranforming to Data Frame
+X = imputer.transform(housing_num)
+housing_tr = pd.DataFrame(X, columns = housing_num.columns,index = housing_num.index)
+```
+
+#### Handling Text and Categorical columns
+We handle the categorical attribute **'ocean_proximity'** by converting it into numerical values using both **Ordinal Encoder** and **OneHot Encoder**. These techniques enable the model to process categorical data effectively.
+
+```js
+// OrdinalEncoder
+from sklearn.preprocessing import OrdinalEncoder
+ordinal_encoder = OrdinalEncoder()
+housing_cat_encoded = ordinal_encoder.fit_transform(housing_cat)
+housing_cat_encoded[:10]
+
+// OneHotEncoder
+from sklearn.preprocessing import OneHotEncoder
+cat_encoder = OneHotEncoder()
+housing_cat_1hot = cat_encoder.fit_transform(housing_cat)
+```
+
+#### Feature Scaling and Transformation
+We explore different feature scaling techniques, namely **MinMaxScaler** and **StandardScaler**, to standardize the numerical attributes and improve model performance.
+
+```js
+// MinMaxScaler
+from sklearn.preprocessing import MinMaxScaler
+min_max_scalar = MinMaxScaler(feature_range=(-1,1))
+housing_num_min_max_scaled = min_max_scalar.fit_transform(housing_num)
+housing_num_min_max_scaled
+
+// StandardScaler
+from sklearn.preprocessing import StandardScaler
+std_scalar = StandardScaler()
+housing_num_std_scaled = std_scalar.fit_transform(housing_num)
+housing_num_std_scaled
+```
 
 
 
