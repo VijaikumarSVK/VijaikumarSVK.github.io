@@ -3,7 +3,7 @@ date: 2024-09-01 12:26:40
 layout: post
 title: House Price Prediction in California
 subtitle: An End-to-End Machine Learning Project
-description: This project develops and deploys a machine learning model to predict California house prices, covering data preprocessing, model training, and hyperparameter tuning.
+description: A machine learning model predicting California house prices, optimized through data preprocessing and tuning.
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1729821798/House_price_predicition_cover_image.jpg
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/House_price_predicition_cover_image
 category: Data Science
@@ -28,6 +28,28 @@ We load the data into a pandas DataFrame and explore its structure using **info(
 Visualizing the data is crucial for understanding its underlying patterns. We create histograms to examine the distribution of each numerical attribute. This helps us identify potential issues like skewed distributions or capped values, which may impact model performance.
 
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729822514/attribute_histogram_plots.png)
+
+The histograms reveal interesting insights:
+1.**Median income:** The data is capped, with the highest value at 15, representing $150,000. This might affect the model's ability to predict prices accurately for high-income areas.
+2.	**Housing median value:** The housing prices are also capped, possibly limiting the model's prediction range.
+3.	**Skewed Distributions:** Many histograms exhibit right-skewness, potentially challenging certain machine learning algorithms in detecting patterns.
+
+#### Creating a Stratified Train-Test Split
+To avoid data snooping bias, we create a stratified train-test split based on the **median_income** attribute. This ensures that both the training and testing sets have representative proportions of different income categories, improving the model's generalizability.
+
+```js
+from sklearn.model_selection import StratifiedShuffleSplit
+splitter = StratifiedShuffleSplit(n_splits = 10 , test_size = 0.2, random_state = 42)
+strat_splits = []
+for train_index, test_index in splitter.split(housing, housing['income_cat']):
+    strat_train_set_n = housing.iloc[train_index]
+    strat_test_set_n = housing.iloc[test_index]
+    strat_splits.append([strat_test_set_n, strat_train_set_n])
+```
+We compare the income category proportions in the overall dataset, stratified test set, and random test set. The stratified split maintains a near-perfect representation of the original proportions, minimizing potential bias
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729824366/compare_table.png)
+
 
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
 
