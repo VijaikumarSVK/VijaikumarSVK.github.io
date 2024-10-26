@@ -32,9 +32,9 @@ Visualizing the data is crucial for understanding its underlying patterns. We cr
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729822514/attribute_histogram_plots.png)
 
 The histograms reveal interesting insights:
-1.**Median income:** The data is capped, with the highest value at 15, representing $150,000. This might affect the model's ability to predict prices accurately for high-income areas.
-2.	**Housing median value:** The housing prices are also capped, possibly limiting the model's prediction range.
-3.	**Skewed Distributions:** Many histograms exhibit right-skewness, potentially challenging certain machine learning algorithms in detecting patterns.
+1. **Median income:** The data is capped, with the highest value at 15, representing $150,000. This might affect the model's ability to predict prices accurately for high-income areas.
+2. **Housing median value:** The housing prices are also capped, possibly limiting the model's prediction range.
+3. **Skewed Distributions:** Many histograms exhibit right-skewness, potentially challenging certain machine learning algorithms in detecting patterns.
 
 #### Creating a Stratified Train-Test Split
 To avoid data snooping bias, we create a stratified train-test split based on the **median_income** attribute. This ensures that both the training and testing sets have representative proportions of different income categories, improving the model's generalizability.
