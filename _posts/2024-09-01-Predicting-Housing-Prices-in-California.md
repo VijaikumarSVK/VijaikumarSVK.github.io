@@ -18,6 +18,8 @@ vj_side_layout: true
 
 **Executive Summary:** This project utilizes machine learning techniques to predict housing prices in California. Using the California housing dataset, the project explores data preprocessing, feature engineering, model selection, and evaluation. The blog details the process, highlighting key insights and challenges encountered. Finally, deployment strategies and ongoing maintenance considerations are discussed.
 
+The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/">GitHub</a></b>
+
 ### House Price Prediction (California)
 #### Fetching Data
 The first step in any machine learning project is gathering the data. For this project, we'll be using the California housing dataset, which contains information about various housing characteristics and their corresponding prices.
@@ -249,7 +251,8 @@ param_grid = [
     {'preprocessing__geo__n_clusters': [10, 15],
     'random_forest__max_features': [6, 8, 10]},
 ]
-grid_search = GridSearchCV(full_pipeline, param_grid, cv = 3,scoring = 'neg_root_mean_squared_error')
+grid_search = GridSearchCV(full_pipeline, param_grid, cv = 3,
+                           scoring = 'neg_root_mean_squared_error')
 grid_search.fit(housing, housing_labels)
 
 cv_res = pd.DataFrame(grid_search.cv_results_)
@@ -288,123 +291,76 @@ cv_res.head()
 
 We analyze the results of these searches, highlighting the best hyperparameters and their impact on model performance.
 
-
-
-
-
+#### Analyzing best models and their errors
+We examine the feature importances of the best model, providing insights into the most influential features in predicting housing prices. This helps us understand the model's decision-making process and identify key factors driving price variations.
 
 ```js
-
+final_model = rnd_search.best_estimator_
+feature_importances = final_model['random_forest'].feature_importances_
+feature_importances.round(2)
+sorted(zip(feature_importances,
+           final_model['preprocessing'].get_feature_names_out()),
+           reverse = True)
 ```
 
+####Evaluating the Test Set
 
-<!--
-> Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
-
-Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
-
-## Inline HTML elements
-
-HTML defines a long list of available inline tags, a complete list of which can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
-
-- **To bold text**, use `<strong>`.
-- *To italicize text*, use `<em>`.
-- Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
-- Citations, like <cite>&mdash; Thomas A. Anderson</cite>, should use `<cite>`.
-- <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
-- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`.
-
-Most of these elements are styled by browsers with few modifications on our part.
-
-# Heading 1
-
-## Heading 2
-
-### Heading 3
-
-#### Heading 4
-
-Vivamus sagittis lacus vel augue rutrum faucibus dolor auctor. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros.
-
-## Code
-
-Cum sociis natoque penatibus et magnis dis `code element` montes, nascetur ridiculus mus.
+Finally, we evaluate the final model on the test set, using RMSE and confidence intervals to assess its generalizability and prediction accuracy.
 
 ```js
-// Example can be run directly in your JavaScript console
+X_test = strat_test_set.drop('median_house_value', axis = 1)
+y_test = strat_test_set['median_house_value'].copy()
+final_predictions = final_model.predict(X_test)
+final_rmse = mean_squared_error(y_test, final_predictions, squared = False)
+print(final_rmse)
+// Output --> 41424.4
 
-// Create a function that takes two arguments and returns the sum of those arguments
-var adder = new Function("a", "b", "return a + b");
+// We can compute a 95% confidence interval for the test RMSE
+from scipy import stats
+confidence = 0.95
+squared_errors = (final_predictions - y_test)**2
+np.sqrt(stats.t.interval(confidence, len(squared_errors) - 1,
+                        loc = squared_errors.mean(),
+                        scale = stats.sem(squared_errors)))
+//Output -->39275.4, 43467.3
 
-// Call the function
-adder(2, 6);
-// > 8
+// Showing how to compute a confidence interval for the RMSE
+m = len(squared_errors)
+mean = squared_errors.mean()
+tscore = stats.t.ppf((1+confidence)/2, df = m -1)
+tmargin = tscore*squared_errors.std(ddof=1)/np.sqrt(m)
+np.sqrt(mean - tmargin), np.sqrt(mean+tmargin)
+// Output --> 39275.4, 43467.3
+
+//Alternatively, we can use Z-score rather than t-score. Since the test is too small, it won't make a huge difference.
+zscore = stats.norm.ppf((1+confidence)/2)
+zmargin = zscore * squared_errors.std(ddof = 1)/np.sqrt(m)
+np.sqrt(mean - zmargin), np.sqrt(mean+zmargin)
+// Output --> 39276.1, 43466.7
 ```
 
-Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.
+### Launch, Monitor and Maintain our System
+We discuss deployment strategies, highlighting the importance of monitoring the model's live performance, ensuring data quality, and maintaining backups for rollback capabilities.
 
-## Lists
+```js
+import joblib
+joblib.dump(final_model, 'my_california_housing_model.pkl')
+```
+We showcase how to load the saved model and use it to predict housing prices for new data, demonstrating the model's practical applicability.
 
-Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Aenean lacinia bibendum nulla sed consectetur. Etiam porta sem malesuada magna mollis euismod. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+```js
+final_model_reloaded = joblib.load("my_california_housing_model.pkl")
+new_data = housing.iloc[:5]  // pretend these are new districts
+predictions = final_model_reloaded.predict(new_data)
+```
 
-* Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
-* Donec id elit non mi porta gravida at eget metus.
-* Nulla vitae elit libero, a pharetra augue.
+**new_data**
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729912426/new_data.png)
 
-Donec ullamcorper nulla non metus auctor fringilla. Nulla vitae elit libero, a pharetra augue.
+**Original value** of housing_labels.iloc[:5]
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729912643/original_value_housing_label.png)
 
-1. Vestibulum id ligula porta felis euismod semper.
-2. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
-3. Maecenas sed diam eget risus varius blandit sit amet non magna.
+**Predicted values**
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729912752/predicted.png)
 
-Cras mattis consectetur purus sit amet fermentum. Sed posuere consectetur est at lobortis.
-
-Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Nullam quis risus eget urna mollis ornare vel eu leo.
-
-## Images
-
-Quisque consequat sapien eget quam rhoncus, sit amet laoreet diam tempus. Aliquam aliquam metus erat, a pulvinar turpis suscipit at.
-
-![placeholder](https://placehold.it/800x400 "Large example image")
-![placeholder](https://placehold.it/400x200 "Medium example image")
-![placeholder](https://placehold.it/200x200 "Small example image")
-
-## Tables
-
-Aenean lacinia bibendum nulla sed consectetur. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Upvotes</th>
-      <th>Downvotes</th>
-    </tr>
-  </thead>
-  <tfoot>
-    <tr>
-      <td>Totals</td>
-      <td>21</td>
-      <td>23</td>
-    </tr>
-  </tfoot>
-  <tbody>
-    <tr>
-      <td>Alice</td>
-      <td>10</td>
-      <td>11</td>
-    </tr>
-    <tr>
-      <td>Bob</td>
-      <td>4</td>
-      <td>3</td>
-    </tr>
-    <tr>
-      <td>Charlie</td>
-      <td>7</td>
-      <td>9</td>
-    </tr>
-  </tbody>
-</table>
-
-Nullam id dolor id nibh ultricies vehicula ut id elit. Sed posuere consectetur est at lobortis. Nullam quis risus eget urna mollis ornare vel eu leo. -->
+By following these steps, we successfully built a machine learning model to predict housing prices in California. The project demonstrates the importance of data exploration, preprocessing, feature engineering, model selection, evaluation, and deployment considerations for creating robust and reliable machine learning solutions.
