@@ -1,7 +1,7 @@
 ---
 date: 2024-09-01 12:26:40
 layout: post
-title: House Price Prediction in California
+title: House Price Prediction California
 subtitle: An End-to-End Machine Learning Project
 description: A machine learning model predicting California house prices, optimized through data preprocessing and tuning.
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1729821798/House_price_predicition_cover_image.jpg
@@ -18,9 +18,9 @@ vj_side_layout: true
 
 **Executive Summary:** This project utilizes machine learning techniques to predict housing prices in California. Using the California housing dataset, the project explores data preprocessing, feature engineering, model selection, and evaluation. The blog details the process, highlighting key insights and challenges encountered. Finally, deployment strategies and ongoing maintenance considerations are discussed.
 
-The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/">GitHub</a></b>
+The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/House-Price-Prediction-California">GitHub</a></b>
 
-### House Price Prediction (California)
+### House Price Prediction California
 #### Fetching Data
 The first step in any machine learning project is gathering the data. For this project, we'll be using the California housing dataset, which contains information about various housing characteristics and their corresponding prices.
 
