@@ -93,7 +93,7 @@ housing['people_per_house'] = housing['population'] / housing['households']
 corr_matrix = housing.corr()
 corr_matrix['median_house_value'].sort_values(ascending = False)
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729828459/corr_image.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729914845/corr_image.png)
 
 The new features, like 'rooms_per_house' and 'bedroom_ratio', provide additional information about the housing characteristics and contribute to a better understanding of the dataset.
 
@@ -303,7 +303,7 @@ sorted(zip(feature_importances,
            reverse = True)
 ```
 
-####Evaluating the Test Set
+#### Evaluating the Test Set
 
 Finally, we evaluate the final model on the test set, using RMSE and confidence intervals to assess its generalizability and prediction accuracy.
 
