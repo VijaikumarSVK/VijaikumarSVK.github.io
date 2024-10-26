@@ -163,7 +163,7 @@ def column_ratio(X):
     return X[:,[0]]/X[:,[1]]
 
 def ratio_name(function_transformer, feature_names_in):
-    return['ratio'] # Gives feature names
+    return['ratio'] // Gives feature names
 
 def ratio_pipeline():
     return make_pipeline(
@@ -191,18 +191,111 @@ preprocessing = ColumnTransformer([
 housing_prepared = preprocessing.fit_transform(housing)
 ```
 
+### Select and Train a Model
+
+We start by training a Linear Regression model and evaluating its performance using RMSE. The model shows signs of underfitting, prompting us to explore more powerful models.
+
+```js
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_squared_error
+lin_reg = make_pipeline(preprocessing, LinearRegression())
+lin_reg.fit(housing, housing_labels)
+housing_predictions = lin_reg.predict(housing)
+housing_predictions[:5].round(-2) // -2 rounded to the nearest hundred
+lin_rmse = mean_squared_error(housing_labels, housing_predictions,squared = False)
+lin_rmse
+// Output --> 68687.89176590036
+```
+
+We then train a Decision Tree Regressor, which overfits the training data, indicating the need for model validation techniques.
+```js
+from sklearn.tree import DecisionTreeRegressor
+tree_reg = make_pipeline(preprocessing, DecisionTreeRegressor(random_state=42))
+tree_reg.fit(housing, housing_labels)
+housing_predictions = tree_reg.predict(housing)
+tree_rmse = mean_squared_error(housing_labels, housing_predictions,squared = False)
+tree_rmse
+// Output --> 0.0
+```
+
+#### Evaluation using Cross - Validation
+To address overfitting and obtain a more reliable performance estimate, we utilize cross-validation with 10 folds. This technique provides a robust evaluation of the Decision Tree Regressor, revealing its limitations in generalizing to unseen data.
+```js
+from sklearn.model_selection import cross_val_score
+tree_rmses = -cross_val_score(tree_reg, housing, housing_labels,
+                             scoring = 'neg_root_mean_squared_error', cv = 10)
+```
+
+Next, we explore a Random Forest Regressor, which exhibits significantly better performance compared to the previous models.
+```js
+from sklearn.ensemble import RandomForestRegressor
+forest_reg = make_pipeline(preprocessing, RandomForestRegressor(random_state=42))
+forest_rmses = -cross_val_score(forest_reg, housing, housing_labels,
+                               scoring = 'neg_root_mean_squared_error', cv = 10)
+```
+
+#### Model Fine-Tune
+To further enhance the Random Forest Regressor's performance, we perform model fine-tuning using Grid Search and Randomized Search. These techniques explore different hyperparameter combinations to identify the optimal model configuration.
+```js
+// GridSearchCV
+from sklearn.model_selection import GridSearchCV
+full_pipeline = Pipeline([
+    ('preprocessing', preprocessing),
+    ('random_forest', RandomForestRegressor(random_state=42))])
+
+param_grid = [
+    {'preprocessing__geo__n_clusters': [5, 8, 10],
+    'random_forest__max_features': [4, 6, 8]},
+    {'preprocessing__geo__n_clusters': [10, 15],
+    'random_forest__max_features': [6, 8, 10]},
+]
+grid_search = GridSearchCV(full_pipeline, param_grid, cv = 3,scoring = 'neg_root_mean_squared_error')
+grid_search.fit(housing, housing_labels)
+
+cv_res = pd.DataFrame(grid_search.cv_results_)
+cv_res.sort_values(by="mean_test_score", ascending=False, inplace=True)
+cv_res = cv_res[["param_preprocessing__geo__n_clusters",
+                 "param_random_forest__max_features", "split0_test_score",
+                 "split1_test_score", "split2_test_score", "mean_test_score"]]
+score_cols = ["split0", "split1", "split2", "mean_test_rmse"]
+cv_res.columns = ["n_clusters", "max_features"] + score_cols
+cv_res[score_cols] = -cv_res[score_cols].round().astype(np.int64)
+cv_res.head()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729910963/Gridsearchcvtable.png)
+
+```js
+//RandomizedSearchCV
+from sklearn.model_selection import RandomizedSearchCV
+from scipy.stats import randint
+param_distribs = {'preprocessing__geo__n_clusters': randint(low=3, high=50),
+                  'random_forest__max_features': randint(low=2, high=20)}
+rnd_search = RandomizedSearchCV(
+    full_pipeline, param_distributions=param_distribs, n_iter=10, cv=3,
+    scoring='neg_root_mean_squared_error', random_state=42)
+rnd_search.fit(housing, housing_labels)
+
+cv_res = pd.DataFrame(rnd_search.cv_results_)
+cv_res.sort_values(by = 'mean_test_score', ascending=False, inplace = True)
+cv_res = cv_res[['param_preprocessing__geo__n_clusters',
+                  'param_random_forest__max_features', 'split0_test_score',
+                  'split1_test_score','split2_test_score','mean_test_score']]
+cv_res.columns = ['n_clusters','max_features']+score_cols
+cv_res[score_cols] = -cv_res[score_cols].round().astype(np.int64)
+cv_res.head()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1729911188/Randomized_search.png)
+
+We analyze the results of these searches, highlighting the best hyperparameters and their impact on model performance.
 
 
 
 
 
 
+```js
 
-
-
-
-
-
+```
 
 
 <!--
