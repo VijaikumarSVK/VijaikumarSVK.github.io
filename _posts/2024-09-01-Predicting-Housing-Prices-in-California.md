@@ -144,6 +144,66 @@ housing_num_std_scaled = std_scalar.fit_transform(housing_num)
 housing_num_std_scaled
 ```
 
+### Transformation Pipelines
+To streamline the data preprocessing steps and ensure consistent execution order, we utilize **Pipeline** and **ColumnTransformer.**
+```js
+from sklearn.compose import ColumnTransformer
+num_attribs = ["longitude", "latitude", "housing_median_age", "total_rooms","total_bedrooms", "population", "households", "median_income"]
+cat_attribs = ["ocean_proximity"]
+cat_pipeline = make_pipeline(SimpleImputer(strategy = 'most_frequent'),OneHotEncoder(handle_unknown='ignore'))
+preprocessing = ColumnTransformer([('num', num_pipeline ,num_attribs),
+                                   ('cat',cat_pipeline, cat_attribs)])
+```
+
+We demonstrate the use of **make_pipeline()** and **column_transformer()** for simplified pipeline creation and highlight the advantages of using these techniques for complex data transformations.
+We then combine all the preprocessing steps into a single **ColumnTransformer**, efficiently handling both numerical and categorical attributes
+
+```js
+def column_ratio(X):
+    return X[:,[0]]/X[:,[1]]
+
+def ratio_name(function_transformer, feature_names_in):
+    return['ratio'] # Gives feature names
+
+def ratio_pipeline():
+    return make_pipeline(
+        SimpleImputer(strategy = 'median'),
+        FunctionTransformer(column_ratio, feature_names_out=ratio_name),
+        StandardScaler())
+
+log_pipeline = make_pipeline(
+    SimpleImputer(strategy = 'median'),
+    FunctionTransformer(np.log, feature_names_out='one-to-one'),
+    StandardScaler())
+
+cluster_simil = ClusterSimilarity(n_clusters = 10, gamma = 1., random_state=42)
+default_num_pipeline = make_pipeline(SimpleImputer(strategy='median'), StandardScaler())
+
+preprocessing = ColumnTransformer([
+    ("bedrooms", ratio_pipeline(), ["total_bedrooms", "total_rooms"]),
+    ("rooms_per_house", ratio_pipeline(), ["total_rooms", "households"]),
+    ("people_per_house", ratio_pipeline(), ["population", "households"]),
+    ("log", log_pipeline, ["total_bedrooms", "total_rooms", "population","households", "median_income"]),
+    ("geo", cluster_simil, ["latitude", "longitude"]),
+    ("cat", cat_pipeline, make_column_selector(dtype_include=object)),
+],remainder = default_num_pipeline )// for remaining column - housing_median_age
+
+housing_prepared = preprocessing.fit_transform(housing)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!--
 > Curabitur blandit tempus porttitor. Nullam quis risus eget urna mollis ornare vel eu leo. Nullam id dolor id nibh ultricies vehicula ut id elit.
