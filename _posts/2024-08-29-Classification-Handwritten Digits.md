@@ -312,7 +312,7 @@ plt.ylabel("True label")
 save_fig("error_analysis_digits_plot")
 plt.show()       
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731825845/error_analysis_digits_plot.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731827260/error_analysis_digits_plot.png)
 
 #### Multilabel Classification
 Multilabel classification allows a single instance to be assigned to multiple classes simultaneously. For instance, a digit image could be labeled as both "large" (7, 8, or 9) and "odd".
@@ -348,7 +348,7 @@ plt.subplot(122); plot_digit(y_test_mod[0])
 save_fig("noisy_digit_example_plot")
 plt.show()
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731826322/error_analysis_digits_plot.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731827284/noisy_digit_example_plot.png)
 
 let's train the classifier and make it clean up this image
 
