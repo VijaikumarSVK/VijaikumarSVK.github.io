@@ -1,5 +1,5 @@
 ---
-date: 2024-11-16 12:26:40
+date: 2024-11-15 12:26:40
 layout: post
 title: Classification-Handwritten Digits
 subtitle: A Comparative Study of Digit Classification Algorithms
