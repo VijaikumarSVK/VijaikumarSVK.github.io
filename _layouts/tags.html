@@ -28,7 +28,9 @@ layout: minimal
       {% for post in pages_list reversed %}
           {% if post.title != null and post.is_generated != true %}
             {% if group == null or group == post.group %}
-              <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a></li>
+              <!-- <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}<span class="entry-date"><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: date_format }}</time></a></li> -->
+              <!-- Below code was update by vijai removing date showing in the tags page -->
+              <li><a href="{{ site.url }}{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
             {% endif %}
           {% endif %}
       {% endfor %}
