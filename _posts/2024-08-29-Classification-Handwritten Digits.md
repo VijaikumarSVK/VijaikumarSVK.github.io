@@ -3,7 +3,7 @@ date: 2024-08-29 12:26:40
 layout: post
 title: Classification-Handwritten Digits
 subtitle: A Comparative Study of Digit Classification Algorithms
-description: Classifies handwritten digits (MNIST) using optimized KNN/SGD, achieving 97% accuracy. Explores multilabel/multioutput classification.
+description: KNN/SGD achieves 97% on MNIST dataset. Multilabel/output classification explored
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1731812902/classification_cover_page_2.jpg
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/classification_cover_page_2
 category: Data Science
@@ -16,15 +16,25 @@ vj_layout: false
 vj_side_layout: true
 ---
 
-**Executive Summary:** This project utilizes machine learning techniques to predict housing prices in California. Using the California housing dataset, the project explores data preprocessing, feature engineering, model selection, and evaluation. The blog details the process, highlighting key insights and challenges encountered. Finally, deployment strategies and ongoing maintenance considerations are discussed.
+**Executive Summary:** This project aims to classify handwritten digits (0-9) using machine learning techniques, primarily focusing on the MNIST(Modified National Institute of Standards and Technology database) dataset. The project explores various classification algorithms, evaluates their performance using metrics like accuracy, precision, recall, and F1-score, and implements techniques like cross-validation and hyperparameter tuning to optimize model performance. It also delves into more advanced concepts such as multilabel and multioutput classification.
 
-The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/House-Price-Prediction-California">GitHub</a></b>
+The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/Classification-Handwritten-Digits">GitHub</a></b>
 
-### House Price Prediction California
-#### Fetching Data
-The first step in any machine learning project is gathering the data. For this project, we'll be using the California housing dataset, which contains information about various housing characteristics and their corresponding prices.
+### Data and Initial Setup
+#### MNIST Dataset Introduction
+The **MNIST** dataset, a cornerstone in image recognition, comprises 70,000 grayscale images of handwritten digits (0-9), each measuring 28x28 pixels. These images, contributed by high school students and US Census Bureau employees, serve as a robust benchmark for evaluating classification models. Each image is labeled with the digit it represents.
 
-We load the data into a pandas DataFrame and explore its structure using **info()** and **describe()** methods. This allows us to understand the data types of each attribute, identify missing values, and gain insights into the data's distribution.
+```js
+from sklearn.datasets import fetch_openml
+mnist = fetch_openml('mnist_784', as_frame = False)
+```
+Data exploration reveals the dataset's structure: **70,000 samples,** each with **784 features** (representing the pixel values) and corresponding labels.
+
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731814161/some_digit_plot.png)
+
+<!-- ################################## -->
+
+
 
 #### Data Visualization
 Visualizing the data is crucial for understanding its underlying patterns. We create histograms to examine the distribution of each numerical attribute. This helps us identify potential issues like skewed distributions or capped values, which may impact model performance.
