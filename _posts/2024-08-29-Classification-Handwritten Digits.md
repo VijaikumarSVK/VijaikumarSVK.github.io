@@ -118,15 +118,38 @@ Output -> 0.7325171197343846
 
 #### Precision-Recall Trade-off
 There's often an inverse relationship between precision and recall. Increasing the prediction threshold can improve precision at the expense of recall, and vice-versa. Analyzing this trade-off is essential for selecting an optimal threshold based on the application's specific requirements.
+```js
+threshold = 3000
+y_some_digit_pred = (y_scores>threshold)
+y_some_digit_pred
+y_scores = cross_val_predict(sgd_clf, X_train, y_train_5, cv=3, method="decision_function")
 
+from sklearn.metrics import precision_recall_curve
+precisions, recalls, thresholds = precision_recall_curve(y_train_5, y_scores)
+```
+```js
+plt.figure(figsize=(8,4))
+plt.plot(thresholds, precisions[:-1], "b--", label = 'Precision', linewidth = 2)
+plt.plot(thresholds, recalls[:-1], "g-", label  ='Recall', linewidth = 2)
+plt.vlines(threshold, 0,1.0,"k", "dotted", label = "threshold")
 
+idx = (thresholds >= threshold).argmax()
+plt.plot(thresholds[idx], precisions[idx],'bo')
+plt.plot(thresholds[idx], recalls[idx],"go")
+plt.axis([-50000,50000,0,1])
+plt.grid()
+plt.xlabel('Threshold')
+plt.legend(loc = "center right")
+save_fig("precision_recall_vs_threshold_plot")
+plt.show()
+```
 
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731816754/precision_recall_vs_threshold_plot.png)
 
 
 
 
 ```js
-
 
 ```
 
