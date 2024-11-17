@@ -4,8 +4,8 @@ layout: post
 title: Classification-Handwritten Digits
 subtitle: A Comparative Study of Digit Classification Algorithms
 description: Classifies handwritten digits (MNIST) using optimized KNN/SGD, achieving 97% accuracy. Explores multilabel/multioutput classification.
-image: https://res.cloudinary.com/dqqjik4em/image/upload/v1731812564/classification_cover_page.jpg
-optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/classification_cover_page
+image: https://res.cloudinary.com/dqqjik4em/image/upload/v1731812902/classification_cover_page_2.jpg
+optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/classification_cover_page_2
 category: Data Science
 tags:
   - ML
