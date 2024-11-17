@@ -46,7 +46,7 @@ y_test_5 = (y_test == '5')
 from sklearn.linear_model import SGDClassifier
 sgd_clf = SGDClassifier(random_state = 42)
 sgd_clf.fit(X_train, y_train_5)
-sgd_clf.predict([some_digit]) // Output - > array([ True])
+sgd_clf.predict([some_digit]) // Output -> array([ True])
 ```
 
 ### Model Evaluation and Performance
@@ -55,12 +55,12 @@ Cross-validation, a robust evaluation technique, is used to assess the model's p
 
 
 ```js
-//using cross_val_score
+//cross-validation and calculate accuracy
 from sklearn.model_selection import cross_val_score
 cross_val_score(sgd_clf, X_train, y_train_5, cv = 3, scoring = 'accuracy')
-// Output - > array([0.95035, 0.96035, 0.9604 ])
+// Output -> array([0.95035, 0.96035, 0.9604 ])
 
-//StratifiedKFold
+//cross-validation manually
 from sklearn.model_selection import StratifiedKFold
 from sklearn.base import clone
 skfolds = StratifiedKFold(n_splits = 3)
@@ -70,7 +70,7 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
     y_train_folds = y_train_5[train_index]
     X_test_fold = X_train[test_index]
     y_test_fold = y_train_5[test_index]
-    
+
     clone_clf.fit(X_train_folds, y_train_folds)
     y_pred = clone_clf.predict(X_test_fold)
     n_correct = sum(y_pred == y_test_fold)
@@ -81,6 +81,43 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
 // 0.9604
 ```
 
+#### Confusion Matrix Analysis
+Confusion matrices offer a detailed breakdown of model predictions, highlighting the counts of true positives, true negatives, false positives, and false negatives. They provide valuable insights into the types of errors the model is making.
+
+```js
+from sklearn.metrics import confusion_matrix
+cm = confusion_matrix(y_train_5, y_train_pred)
+// Output
+// array([[53892,   687],
+//        [ 1891,  3530]], dtype=int64)
+```
+ The first row of this matrix considers non-5 images (the negative class): 53,892 of them were correctly classified as non-5s (they are called **true negatives**), while the remaining 687 were wrongly classified as 5s (**false positives**, also called type I errors). The second row considers the images of 5s (the positive class): 1,891 were wrongly classified as non-5s (**false negatives**, also called type II errors), while the remaining 3,530 were correctly classified as 5s (**true positives**).
+
+#### Precision and Recall Metrics
+Precision and recall are crucial metrics for evaluating a classifier's performance, especially in imbalanced datasets. Precision measures the accuracy of positive predictions, while recall quantifies the model's ability to identify all positive instances.
+```js
+//Precision score
+from sklearn.metrics import precision_score, recall_score
+precision_score(y_train_5, y_train_pred) == 3530 / (687 + 3530)
+// Output -> 0.8370879772350012
+```
+```js
+//Recall score
+recall_score(y_train_5, y_train_pred)# == 3530 / (1891 + 3530)
+// Output -> 0.6511713705958311
+```
+The F1-score, the harmonic mean of precision and recall, provides a single metric that balances both aspects of performance.<br>
+
+**F1 = 2 × ((precision × recall)/(precision + recall))**
+
+```js
+from sklearn.metrics import f1_score
+f1_score(y_train_5,y_train_pred)
+Output -> 0.7325171197343846
+```
+
+#### Precision-Recall Trade-off
+There's often an inverse relationship between precision and recall. Increasing the prediction threshold can improve precision at the expense of recall, and vice-versa. Analyzing this trade-off is essential for selecting an optimal threshold based on the application's specific requirements.
 
 
 
@@ -88,25 +125,10 @@ for train_index, test_index in skfolds.split(X_train, y_train_5):
 
 
 
+```js
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+```
 
 <!-- ################################## -->
 
