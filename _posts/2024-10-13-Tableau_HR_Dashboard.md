@@ -1,5 +1,5 @@
 ---
-date: 2024-11-01 12:26:40
+date: 2024-10-13 12:26:40
 layout: post
 title: Tableau - HR Dashboard
 <!-- subtitle: This Tableau project is a step-by-step learning experience in building dashboard projects using Tableau from requirements to professional dashboard like I do in my real-world projects. -->

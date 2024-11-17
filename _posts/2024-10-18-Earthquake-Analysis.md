@@ -1,5 +1,5 @@
 ---
-date: 2024-11-03 12:26:40
+date: 2024-10-18 12:26:40
 layout: post
 title: Earthquake Analysis
 subtitle: 'Unveiling Seismic Secrets: An In-Depth Analysis of Earthquake Data'

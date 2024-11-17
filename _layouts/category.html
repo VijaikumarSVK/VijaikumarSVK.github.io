@@ -38,9 +38,9 @@
                                     {% endif %}
                                     <div class="box-info">
                                       <!-- Below datetime is comment by vijai on 17-11-2024 to remove date in the category section -->
-                                        <!-- <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
+                                        <time datetime="{{ post.date | date_to_xmlschema }}" class="date">
                                             {% include date.html date=post.date %}
-                                        </time> -->
+                                        </time>
                                         <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">
                                             <h2 class="post-title">
                                                 {{ post.title }}

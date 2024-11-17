@@ -1,5 +1,5 @@
 ---
-date: 2024-11-10 12:26:40
+date: 2024-10-26 12:26:40
 layout: post
 title: House Price Prediction California
 subtitle: An End-to-End Machine Learning Project
