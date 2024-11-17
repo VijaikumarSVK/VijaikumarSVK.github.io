@@ -28,9 +28,85 @@ The **MNIST** dataset, a cornerstone in image recognition, comprises 70,000 gray
 from sklearn.datasets import fetch_openml
 mnist = fetch_openml('mnist_784', as_frame = False)
 ```
-Data exploration reveals the dataset's structure: **70,000 samples,** each with **784 features** (representing the pixel values) and corresponding labels.
+Data exploration reveals the dataset's structure: **70,000 samples,** each with **784 features** (representing the pixel values) and corresponding labels.<br>
 
+Below sample image represents digit 5
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731814161/some_digit_plot.png)
+
+Visualizing a sample image helps understand the data format and verify the label accuracy.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731814490/more_digits_plot.png)
+Displaying a grid of images provides a comprehensive overview of the dataset's diversity.
+
+#### Binary Classification with SGD
+As a starting point, the project simplifies the classification problem to a binary classification task: identifying the digit "5". This creates a "5-detector" that distinguishes between two classes: "5" and "not-5". The Stochastic Gradient Descent (SGD) classifier, well-suited for large datasets, is employed for this task.
+
+```js
+y_train_5 = (y_train =='5') // true for all 5's, False for all other digits
+y_test_5 = (y_test == '5')
+from sklearn.linear_model import SGDClassifier
+sgd_clf = SGDClassifier(random_state = 42)
+sgd_clf.fit(X_train, y_train_5)
+sgd_clf.predict([some_digit]) // Output - > array([ True])
+```
+
+### Model Evaluation and Performance
+#### Cross-Validation for Accuracy Measurement
+Cross-validation, a robust evaluation technique, is used to assess the model's performance. It involves partitioning the training set into folds, training the model on different combinations of these folds, and evaluating its performance on the held-out fold. This provides a more reliable estimate of the model's generalization ability.
+
+
+```js
+//using cross_val_score
+from sklearn.model_selection import cross_val_score
+cross_val_score(sgd_clf, X_train, y_train_5, cv = 3, scoring = 'accuracy')
+// Output - > array([0.95035, 0.96035, 0.9604 ])
+
+//StratifiedKFold
+from sklearn.model_selection import StratifiedKFold
+from sklearn.base import clone
+skfolds = StratifiedKFold(n_splits = 3)
+for train_index, test_index in skfolds.split(X_train, y_train_5):
+    clone_clf = clone(sgd_clf)
+    X_train_folds = X_train[train_index]
+    y_train_folds = y_train_5[train_index]
+    X_test_fold = X_train[test_index]
+    y_test_fold = y_train_5[test_index]
+    
+    clone_clf.fit(X_train_folds, y_train_folds)
+    y_pred = clone_clf.predict(X_test_fold)
+    n_correct = sum(y_pred == y_test_fold)
+    print(n_correct / len(y_pred))
+//Output
+// 0.95035
+// 0.96035
+// 0.9604
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <!-- ################################## -->
 
