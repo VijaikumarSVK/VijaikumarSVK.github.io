@@ -143,8 +143,47 @@ plt.legend(loc = "center right")
 save_fig("precision_recall_vs_threshold_plot")
 plt.show()
 ```
-
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731816754/precision_recall_vs_threshold_plot.png)
+
+Another way to select a good precision/recall trade-off is to plot precision directly against recall
+```js
+import matplotlib.patches as patches
+plt.figure(figsize=(6,5))
+plt.plot(recalls, precisions, linewidth = 2, label = 'Precision/Recall curve')
+plt.plot([recalls[idx], recalls[idx]],[0.,precisions[idx]], "k:")
+plt.plot([0.0, recalls[idx]], [precisions[idx], precisions[idx]], "k:")
+plt.plot([recalls[idx]], [precisions[idx]], "ko", label = "Point at threshold 3,000")
+plt.gca().add_patch(patches.FancyArrowPatch(
+    (0.79, 0.60), (0.61, 0.78),
+    connectionstyle="arc3,rad=.2",
+    arrowstyle="Simple, tail_width=1.5, head_width=8, head_length=10",
+    color="#444444"))
+plt.text(0.56, 0.62, "Higher\nthreshold", color = "#333333")
+plt.xlabel("Recall")
+plt.ylabel("Precision")
+plt.axis([0,1,0,1])
+plt.grid()
+plt.legend(loc = 'lower left')
+save_fig("precision_vs_recall_plot")
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731817186/precision_vs_recall_plot.png)
+
+
+```js
+idx_for_90_precision = (precisions >= 0.90).argmax()
+threshold_for_90_precision = thresholds[idx_for_90_precision] // --> 3370.0194991439557
+y_train_pred_90 = (y_scores >= threshold_for_90_precision)
+precision_score(y_train_5, y_train_pred_90) // --> 0.9000345901072293
+recall_at_90_precision = recall_score(y_train_5, y_train_pred_90) // --> 0.4799852425751706
+```
+We have 90% precision classifier, but high precision classifier is not very usefull if its recall is too low. for many application 48% recall wouldn't be great at all
+
+
+
+
+
+
 
 
 
