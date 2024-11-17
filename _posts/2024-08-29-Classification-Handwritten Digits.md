@@ -59,26 +59,6 @@ Cross-validation, a robust evaluation technique, is used to assess the model's p
 from sklearn.model_selection import cross_val_score
 cross_val_score(sgd_clf, X_train, y_train_5, cv = 3, scoring = 'accuracy')
 // Output -> array([0.95035, 0.96035, 0.9604 ])
-
-//cross-validation manually
-from sklearn.model_selection import StratifiedKFold
-from sklearn.base import clone
-skfolds = StratifiedKFold(n_splits = 3)
-for train_index, test_index in skfolds.split(X_train, y_train_5):
-    clone_clf = clone(sgd_clf)
-    X_train_folds = X_train[train_index]
-    y_train_folds = y_train_5[train_index]
-    X_test_fold = X_train[test_index]
-    y_test_fold = y_train_5[test_index]
-
-    clone_clf.fit(X_train_folds, y_train_folds)
-    y_pred = clone_clf.predict(X_test_fold)
-    n_correct = sum(y_pred == y_test_fold)
-    print(n_correct / len(y_pred))
-//Output
-// 0.95035
-// 0.96035
-// 0.9604
 ```
 
 #### Confusion Matrix Analysis
@@ -113,7 +93,7 @@ The F1-score, the harmonic mean of precision and recall, provides a single metri
 ```js
 from sklearn.metrics import f1_score
 f1_score(y_train_5,y_train_pred)
-Output -> 0.7325171197343846
+// Output -> 0.7325171197343846
 ```
 
 #### Precision-Recall Trade-off
