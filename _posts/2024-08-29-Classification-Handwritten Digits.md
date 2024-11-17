@@ -169,7 +169,6 @@ plt.show()
 ```
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731817186/precision_vs_recall_plot.png)
 
-
 ```js
 idx_for_90_precision = (precisions >= 0.90).argmax()
 threshold_for_90_precision = thresholds[idx_for_90_precision] // --> 3370.0194991439557
@@ -179,11 +178,78 @@ recall_at_90_precision = recall_score(y_train_5, y_train_pred_90) // --> 0.47998
 ```
 We have 90% precision classifier, but high precision classifier is not very usefull if its recall is too low. for many application 48% recall wouldn't be great at all
 
+#### ROC Curve and AUC
+The Receiver Operating Characteristic (ROC) curve visually represents the trade-off between the true positive rate (recall) and the false positive rate. It helps assess the classifier's performance across different thresholds and compare different classifiers.
 
+```js
+from sklearn.metrics import roc_curve
+fpr, tpr, thresholds = roc_curve(y_train_5, y_scores)
+idx_for_threshold_at_90 = (thresholds <= threshold_for_90_precision).argmax()
+tpr_90, fpr_90 = tpr[idx_for_threshold_at_90], fpr[idx_for_threshold_at_90]
 
+plt.figure(figsize = (6,5))
+plt.plot(fpr, tpr, linewidth = 2, label = "ROC Curve")
+plt.plot([0,1],[0,1],'k:', label = "Random Classifier's ROC curve")
+plt.plot([fpr_90],[tpr_90],"ko", label = "Threshold for 90% precision")
+plt.gca().add_patch(patches.FancyArrowPatch(
+    (0.20, 0.89), (0.07, 0.70),
+    connectionstyle="arc3,rad=.4",
+    arrowstyle="Simple, tail_width=1.5, head_width=8, head_length=10",
+    color="#444444"))
+plt.text(0.12,0.71, "Higher\nthreshold", color = "#333333")
+plt.xlabel('False Positive Rate (Fall-out)')
+plt.ylabel('True Positive Rage (Recall)')
+plt.grid()
+plt.axis([0,1,0,1])
+plt.legend(loc = 'lower right', fontsize = 13)
+save_fig('roc_curve_plot')
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731822468/roc_curve_plot.png)
 
+The area under the ROC curve (AUC) provides a single metric summarizing the classifier's overall performance.
+```js
+from sklearn.metrics import roc_auc_score
+roc_auc_score(y_train_5,y_scores)
+// Output -> 0.9604938554008616
+```
+comparing **RandomForestClassifier** PR and F1 score with **SGDClassifier**
+```js
+from sklearn.ensemble import RandomForestClassifier
+forest_clf = RandomForestClassifier(random_state=42)
+y_probas_forest = cross_val_predict(forest_clf, X_train, y_train_5, cv = 3, method = 'predict_proba')
+y_probas_forest[:2]
+// Output:
+// array([[0.11, 0.89],
+//        [0.99, 0.01]])
+```
+By looking the probabilities for the first two images in the training set Model predicts the first image is positve with <b>89%</b> probability, and it predicts the second image is negative with <b>99%</b> probability.
 
+```js
+y_scores_forest = y_probas_forest[:,1]
+precisions_forest, recalls_forest, thresholds_forest = precision_recall_curve(y_train_5, y_scores_forest)
 
+plt.figure(figsize = (6,5))
+plt.plot(recalls_forest, precisions_forest, "b-", linewidth = 2,
+        label = 'Random Forest')
+plt.plot(recalls, precisions, '--', linewidth=2, label = 'SGD')
+plt.xlabel("Recall")
+plt.ylabel("Precision")
+plt.axis([0, 1, 0, 1])
+plt.grid()
+plt.legend(loc="lower left")
+save_fig("pr_curve_comparison_plot")
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1731823975/pr_curve_comparison_plot.png)
+```js
+y_train_pred_forest = y_probas_forest[:,1] >=0.5
+f1_score(y_train_5, y_train_pred_forest)
+// Output -> 0.9274509803921569
+
+roc_auc_score(y_train_5, y_scores_forest)
+// Output -> 0.9983436731328145
+```
 
 
 
