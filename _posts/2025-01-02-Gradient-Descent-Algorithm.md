@@ -182,7 +182,7 @@ plt.grid()
 save_fig("sgd_plot")
 plt.show()
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959495/sgd_plot.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959824/sgd_plot.png)
 
 #### Mini-Batch Gradient Descent
 Mini-Batch Gradient Descent strikes a balance between Batch GD and SGD. It calculates the gradient using a small, randomly selected subset (mini-batch) of the training set. This approach leverages the efficiency of matrix operations, particularly beneficial when using GPUs.
@@ -231,7 +231,7 @@ plt.axis([2.6, 4.6, 2.3, 3.4])
 plt.grid()
 plt.show()
 ```
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959670/gradient_descent_paths_plot.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959830/gradient_descent_paths_plot.png)
 
 ### Conclusion
 This project provides a comprehensive overview of the Gradient Descent algorithm and its variants. It highlights the importance of the learning rate and the trade-offs between computational cost and convergence behavior for each type of Gradient Descent. The implementation using NumPy demonstrates the core concepts and facilitates understanding of these optimization techniques crucial for machine learning.
