@@ -45,19 +45,22 @@ The project demonstrates Gradient Descent with a simple linear regression exampl
 import numpy as np
 import matplotlib.pyplot as plt
 
-# creating simple linear regression using numpy
+// creating simple linear regression using numpy
 m = 100
-X = 2*np.random.rand(m,1) # creating columns vector
-y = 4 + 3*X+np.random.randn(m,1) # creating column vector
+X = 2*np.random.rand(m,1) // creating columns vector
+y = 4 + 3*X+np.random.randn(m,1) // creating column vector
 
 from sklearn.preprocessing import add_dummy_feature
 X_b = add_dummy_feature(X) #adding X0 = 1 to each instance
-theta_best = np.linalg.inv(X_b.T @ X_b) @ X_b.T@ y # @ symbol is doing matrix multiplication
+theta_best = np.linalg.inv(X_b.T @ X_b) @ X_b.T@ y // @ symbol is doing matrix multiplication
 
 X_new = np.array([[0],[2]])
 X_new_b = add_dummy_feature(X_new)
 y_predict = X_new_b @ theta_best
-
+y_predict
+// Output
+// array([[4.21509616],
+//        [9.75532293]])
 #plotting Linear Regression chart
 plt.figure(figsize = (6,4))
 plt.plot(X_new, y_predict, 'r-', label = 'Predictions')
@@ -70,6 +73,116 @@ plt.show()
 ```
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957857/linear_model_predictions_plot.png)
 
+### Types of Gradient Descent
+The project explores three main variations of Gradient Descent.
+#### Batch Gradient Descent
+Batch Gradient Descent calculates the gradient using the entire training set in each iteration. This makes it precise but computationally expensive for large datasets
+
+
+```js
+// Implementing Batch Gradient Descent
+eta = 0.1 #learning rate
+n_epochs = 1000
+m = len(X_b) # number of instances
+
+np.random.seed(42)
+theta = np.random.randn(2,1)
+
+for epoch in range(n_epochs):
+    gradients = 2/m*X_b.T @ (X_b @ theta - y)
+    theta = theta - eta *gradients
+print(theta)
+// array([[4.21509616],
+//        [2.77011339]])
+```
+
+The impact of different learning rates on Batch Gradient Descent is visualized.
+
+```js
+// function to plot gradient descent with different learning rates
+import matplotlib as mpl
+
+def plot_gradient_descent(theta, eta):
+    m = len(X_b)
+    plt.plot(X,y, "b.")
+    n_epochs = 1000
+    n_shown = 20
+    theta_path = []
+    for epoch in range(n_epochs):
+        if epoch < n_shown:
+            y_predict = X_new_b @ theta
+            color = mpl.colors.rgb2hex(plt.cm.OrRd(epoch /  n_shown + 0.15))
+            plt.plot(X_new, y_predict, linestyle = 'solid', color= color)
+        gradients = 2/m *  X_b.T @ (X_b @ theta - y)
+        theta= theta -eta * gradients
+        theta_path.append(theta)
+    plt.xlabel("$x_1$")
+    plt.axis([0, 2, 0, 15])
+    plt.grid()
+    plt.title(fr"$\eta = {eta}$")
+    return theta_path
+```
+
+```js
+// calling the function with different eta values and plotting
+np.random.seed(42)
+theta = np.random.randn(2,1)
+
+plt.figure(figsize = (10,4))
+plt.subplot(131)
+plot_gradient_descent(theta, eta = 0.02)
+plt.ylabel("$y$", rotation=0)
+plt.subplot(132)
+theta_path_bgd = plot_gradient_descent(theta, eta=0.1)
+plt.gca().axes.yaxis.set_ticklabels([])
+plt.subplot(133)
+plt.gca().axes.yaxis.set_ticklabels([])
+plot_gradient_descent(theta, eta=0.5)
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959258/gradient_descent_plot.png)
+
+#### Stochastic Gradient Descent
+Stochastic Gradient Descent (SGD) updates the parameters based on the gradient calculated from a single, randomly selected instance in the training dataset. While computationally efficient, its convergence is more erratic due to its stochastic nature.
+
+```js
+theta_path_sgd = []
+n_epochs = 50
+t0, t1 = 5,50  // learning schedule hyper parameters
+
+def learning_schedule(t):
+    return t0/(t + t1)
+
+np.random.seed(42)
+theta = np.random.randn(2,1)
+n_shown = 20
+plt.figure(figsize = (6,4))
+
+for epoch in range(n_epochs):
+    for iteration in range(m):
+
+        if epoch == 0 and iteration < n_shown:
+            y_predict = X_new_b @ theta
+            color = mpl.colors.rgb2hex(plt.cm.OrRd(iteration / n_shown + 0.15))
+            plt.plot(X_new, y_predict, color=color)
+
+        random_index = np.random.randint(m)
+        xi = X_b[random_index : random_index +1]
+        yi = y[random_index : random_index + 1]
+        gradients = 2 * xi.T @ (xi @ theta - yi ) // for SGC do not divide by m
+        eta = learning_schedule(epoch * m + iteration)
+        theta = theta - eta *gradients
+        theta_path_sgd.append(theta)
+
+plt.plot(X, y, "b.")
+plt.xlabel("$x_1$")
+plt.ylabel("$y$", rotation=0)
+plt.axis([0, 2, 0, 15])
+plt.grid()
+save_fig("sgd_plot")
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959495/sgd_plot.png)
 
 
 
