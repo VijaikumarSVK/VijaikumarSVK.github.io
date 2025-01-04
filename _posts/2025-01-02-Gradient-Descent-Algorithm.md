@@ -1,8 +1,8 @@
 ---
-date: 2024-11-19 12:26:40
+date: 2025-01-02 12:26:40
 layout: post
 title: Gradient Descent Algorithm
-subtitle: Optimizing Performance with Different Gradient Descent Methods
+subtitle: Optimizing ML Model Performance with Different Gradient Descent Methods
 description: A breakdown of essential machine learning optimization algorithm.
 image: https://res.cloudinary.com/dqqjik4em/image/upload/v1735925954/random%20initial%20value%20-%20cover%20page.png
 optimized_image: https://res.cloudinary.com/dqqjik4em/image/upload/f_auto,q_auto/random%20initial%20value%20-%20cover%20page
