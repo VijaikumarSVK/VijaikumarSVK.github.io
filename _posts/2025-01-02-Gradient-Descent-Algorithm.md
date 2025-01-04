@@ -194,7 +194,7 @@ minibatch_size = 20
 n_batches_per_epoch = ceil(m/ minibatch_size)
 np.random.seed(42)
 theta = np.random.randn(2,1)
-t0, t1 = 200, 1000 # learning schecule hyperparameters
+t0, t1 = 200, 1000 // learning schecule hyperparameters
 
 def learning_schedule(t):
     return t0/(t+t1)
