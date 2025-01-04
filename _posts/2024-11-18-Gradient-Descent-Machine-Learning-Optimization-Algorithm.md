@@ -1,5 +1,5 @@
 ---
-date: 2025-01-01 12:26:40
+date: 2024-11-18 12:26:40
 layout: post
 title: Gradient Descent: A Machine Learning Optimization Algorithm
 subtitle: Optimizing Performance with Different Gradient Descent Methods
