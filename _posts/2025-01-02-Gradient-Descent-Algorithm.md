@@ -28,22 +28,47 @@ The process begins by initializing the model parameters with random values. Then
 
 #### The Learning Rate
 The learning rate determines the size of the steps taken during gradient descent. A small learning rate leads to slow convergence, requiring many iterations to reach the minimum.
-
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957419/small%20gradient%20value.png)
 
+A large learning rate might cause the algorithm to overshoot the minimum, potentially leading to divergence.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957739/larger_gradient_value.png)
+
+Gradient descent, while effective, isn't fool proof. The shape of the cost function can pose challenges. "Irregular terrain" like holes or ridges can prevent finding the absolute best solution (global minimum), sometimes trapping the algorithm in a suboptimal solution (local minimum). Flat areas (plateaus) can also slow progress significantly, requiring extensive computation to traverse. A poor starting point can exacerbate these problems, leading to either a local minimum or slow convergence.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957857/gradient_pitfall.png)
 
 
+### Implementation: Simple Linear Regression
+The project demonstrates Gradient Descent with a simple linear regression example using NumPy. First, we generate synthetic data for the linear regression.
 
 
+```js
+import numpy as np
+import matplotlib.pyplot as plt
 
+# creating simple linear regression using numpy
+m = 100
+X = 2*np.random.rand(m,1) # creating columns vector
+y = 4 + 3*X+np.random.randn(m,1) # creating column vector
 
+from sklearn.preprocessing import add_dummy_feature
+X_b = add_dummy_feature(X) #adding X0 = 1 to each instance
+theta_best = np.linalg.inv(X_b.T @ X_b) @ X_b.T@ y # @ symbol is doing matrix multiplication
 
+X_new = np.array([[0],[2]])
+X_new_b = add_dummy_feature(X_new)
+y_predict = X_new_b @ theta_best
 
-
-
-
-
-
+#plotting Linear Regression chart
+plt.figure(figsize = (6,4))
+plt.plot(X_new, y_predict, 'r-', label = 'Predictions')
+plt.plot(X, y, 'b.')
+plt.xlabel("$x_1$")
+plt.ylabel("$y$", rotation = 0)
+plt.axis([0,2,0,15])
+plt.legend(loc = 'upper left')
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957857/linear_model_predictions_plot.png)
 
 
 
