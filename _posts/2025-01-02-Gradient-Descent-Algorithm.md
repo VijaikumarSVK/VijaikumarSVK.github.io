@@ -184,17 +184,54 @@ plt.show()
 ```
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959495/sgd_plot.png)
 
+#### Mini-Batch Gradient Descent
+Mini-Batch Gradient Descent strikes a balance between Batch GD and SGD. It calculates the gradient using a small, randomly selected subset (mini-batch) of the training set. This approach leverages the efficiency of matrix operations, particularly beneficial when using GPUs.
 
+```js
+from math import ceil
+n_epochs = 50
+minibatch_size = 20
+n_batches_per_epoch = ceil(m/ minibatch_size)
+np.random.seed(42)
+theta = np.random.randn(2,1)
+t0, t1 = 200, 1000 # learning schecule hyperparameters
 
+def learning_schedule(t):
+    return t0/(t+t1)
 
+theta_path_mgd = []
 
+for epoch in range(n_epochs):
+    shuffled_indices = np.random.permutation(m)
+    X_b_shuffled = X_b[shuffled_indices]
+    y_shuffled = y[shuffled_indices]
 
+    for iteration in range(0, n_batches_per_epoch):
+        idx = iteration * minibatch_size
+        xi = X_b_shuffled[idx:idx + minibatch_size]
+        yi = y_shuffled[idx:idx+minibatch_size]
 
+        gradients = 2 / minibatch_size * xi.T@(xi@theta - yi)
+        eta = learning_schedule(iteration)
+        theta = theta - eta * gradients
+        theta_path_mgd.append(theta)
 
+theta_path_bgd = np.array(theta_path_bgd)
+theta_path_sgd = np.array(theta_path_sgd)
+theta_path_mgd = np.array(theta_path_mgd)
 
+plt.figure(figsize=(7, 4))
+plt.plot(theta_path_sgd[:, 0], theta_path_sgd[:, 1], "r-s", linewidth=1,label="Stochastic")
+plt.plot(theta_path_mgd[:, 0], theta_path_mgd[:, 1], "g-+", linewidth=2,label="Mini-batch")
+plt.plot(theta_path_bgd[:, 0], theta_path_bgd[:, 1], "b-o", linewidth=3,label="Batch")
+plt.legend(loc="upper left")
+plt.xlabel(r"$\theta_0$")
+plt.ylabel(r"$\theta_1$   ", rotation=0)
+plt.axis([2.6, 4.6, 2.3, 3.4])
+plt.grid()
+plt.show()
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735959670/gradient_descent_paths_plot.png)
 
-
-
-
-
-<!-- ttt -->
+### Conclusion
+This project provides a comprehensive overview of the Gradient Descent algorithm and its variants. It highlights the importance of the learning rate and the trade-offs between computational cost and convergence behavior for each type of Gradient Descent. The implementation using NumPy demonstrates the core concepts and facilitates understanding of these optimization techniques crucial for machine learning.
