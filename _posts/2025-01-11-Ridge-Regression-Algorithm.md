@@ -20,7 +20,7 @@ vj_side_layout: true
 
 The complete Python code and required file for this analysis is available on my <b><a href="https://github.com/VijaikumarSVK/Ridge-Regression">GitHub</a></b>
 
-### Introduction to Gradient Descent
+### Introduction
 Predicting the success of Olympic teams is a complex task involving numerous factors. This project utilizes Ridge Regression, a powerful statistical method, to tackle this challenge. Ridge Regression addresses the problem of multicollinearity, where predictor variables are highly correlated, by adding a penalty term to the ordinary least squares objective function. This regularization helps prevent overfitting, leading to a more robust and generalizable model.
 
 #### Data Loading and Preprocessing
