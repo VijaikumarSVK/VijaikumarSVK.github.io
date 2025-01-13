@@ -28,9 +28,6 @@ The project begins by loading the Olympic teams' data from a CSV file using pand
 
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1736739873/olympic_data.png)
 
-A large learning rate might cause the algorithm to overshoot the minimum, potentially leading to divergence.
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957739/larger_gradient_value.png)
-
 The dataset is then split into training and testing sets to evaluate the model's performance on unseen data.
 
 ```js
@@ -56,6 +53,30 @@ X = (X - x_mean) / x_std
 // We rescaled our STD to 1 and mean to Zero
 ```
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1736740203/Ridge_scaled_data.png)
+
+#### Adding Intercept Term
+An intercept term is added to the predictor variables to represent the baseline prediction when all other features are zero. This is crucial for accurate model fitting.
+```js
+X["intercept"] = 1
+X = X[["intercept"] + predictors]
+```
+
+#### Ridge Regression Implementation
+The core of the project involves implementing the Ridge Regression equation from scratch. This includes creating the penalty matrix using the chosen alpha (regularization strength) and the identity matrix, and then calculating the coefficients (B) using the formula:
+
+**B = (XᵀX + αI)⁻¹Xᵀy**
+
+```js
+alpha = 2
+I = np.identity(X.shape[1])
+I[0][0] = 0
+penalty = alpha * I
+B = np.linalg.inv(X.T @ X + penalty) @ X.T @ y
+```
+
+The calculated coefficients represent the weights assigned to each predictor variable.
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1736740780/manual_ridge.png)
+
 
 <!--
 ### Implementation: Simple Linear Regression
