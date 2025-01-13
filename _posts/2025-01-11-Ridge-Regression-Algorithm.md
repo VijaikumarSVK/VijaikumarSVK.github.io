@@ -26,15 +26,38 @@ Predicting the success of Olympic teams is a complex task involving numerous fac
 #### Data Loading and Preprocessing
 The project begins by loading the Olympic teams' data from a CSV file using pandas. The dataset contains information on various teams, including the year of participation, number of athletes, events participated in, average age, height, weight, and previous medal counts.
 
-<!-- ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957419/small%20gradient%20value.png)
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1736739873/olympic_data.png)
 
 A large learning rate might cause the algorithm to overshoot the minimum, potentially leading to divergence.
 ![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957739/larger_gradient_value.png)
 
-Gradient descent, while effective, isn't fool proof. The shape of the cost function can pose challenges. "Irregular terrain" like holes or ridges can prevent finding the absolute best solution (global minimum), sometimes trapping the algorithm in a suboptimal solution (local minimum). Flat areas (plateaus) can also slow progress significantly, requiring extensive computation to traverse. A poor starting point can exacerbate these problems, leading to either a local minimum or slow convergence.
-![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1735957857/gradient_pitfall.png)
+The dataset is then split into training and testing sets to evaluate the model's performance on unseen data.
 
+```js
+train, test = train_test_split(teams, test_size=0.2, random_state=1)
+```
 
+#### Feature Selection and Target Variable
+For this project, the number of athletes and events participated in are selected as predictor variables (features), while the number of medals won serves as the target variable.
+
+```js
+predictors = ["athletes", "events"]
+target = "medals"
+X = train[predictors].copy()
+y = train[[target]].copy()
+```
+#### Data Scaling
+To ensure that all features contribute equally to the model, the predictor variables are standardized by subtracting the mean and dividing by the standard deviation. This prevents features with larger values from dominating the model.
+```js
+x_mean = X.mean()
+x_std = X.std()
+X = (X - x_mean) / x_std
+
+// We rescaled our STD to 1 and mean to Zero
+```
+![alt text](https://res.cloudinary.com/dqqjik4em/image/upload/v1736740203/Ridge_scaled_data.png)
+
+<!--
 ### Implementation: Simple Linear Regression
 The project demonstrates Gradient Descent with a simple linear regression example using NumPy. First, we generate synthetic data for the linear regression.
 
